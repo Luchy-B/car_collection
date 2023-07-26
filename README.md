@@ -161,6 +161,8 @@ Give a start ⭐️ If you like this project...
 
 Thank you Microverse and my friend who always explain me for preparing this project! clapclapclap
 
+[Creative Commons](https://creativecommons.org/licenses/by-nc/4.0/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
