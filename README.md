@@ -1,24 +1,172 @@
-# README
+📗 Table of Contents
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-Things you may want to cover:
+<!-- PROJECT DESCRIPTION -->
 
-* Ruby version
+# 📖 [Hello_Rails_React_App] <a name="about-project"></a>
 
-* System dependencies
+**[Hello_Rails_React_App]** In this exercise I will have connect previous knowledge with new knowledge as you get a chance to use Webpack with jsbundling-rails gem.
 
-* Configuration
+## 🛠 Built With <a name="built-with"></a>
 
-* Database creation
+### Tech Stack <a name="tech-stack"></a>
 
-* Database initialization
+<summary>Ruby on Rails</summary>
+  <ul>
+    <li><a href="https://guides.rubyonrails.org">Ruby on Rails</a></li>
+  </ul>
+</details>
 
-* How to run the test suite
+<summary>React</summary>
+  <ul>
+    <li><a href="https://react.dev">React</a></li>
+  </ul>
+</details>
 
-* Services (job queues, cache servers, search engines, etc.)
+<!-- Features -->
 
-* Deployment instructions
+### Key Features <a name="key-features"></a>
 
-* ...
+- **[Add Remove functionality]**
+- **[Add Update functionality]**
+- **[Add more data base]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+<!--
+Example command:
+
+```sh
+  sudo apt install ruby-full
+```
+ -->
+
+### Setup
+
+Clone this repository to your desired folder:
+
+Example commands:
+
+```sh
+  cd my-folder
+  git clone https://github.com/Kaghenimbale/car_collection
+
+```
+
+### Install
+
+Install this project with:
+
+Example command:
+
+```sh
+  cd blog-app
+  bundle install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  rails s
+```
+
+### Deployment
+
+This App has not been deployed
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec spec
+```
+
+```sh
+  bin/rails test test/models/article_test.rb
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Kagheni Mbale Christian**
+
+- GitHub: [@githubhandle](https://github.com/Kaghenimbale)
+- Twitter: [@twitterhandle](https://twitter.com/MbaleKagheni)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kagheni-mbale-401b90240/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **[Add schemas to the project]**
+- [ ] **[Add screenshot to provide details about the project]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Kaghenimbale/car_collection/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+Give a start ⭐️ If you like this project...
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+Thank you Microverse and my friend who always explain me for preparing this project! clapclapclap
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](https://github.com/Kaghenimbale/car_collection/blob/main/LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
