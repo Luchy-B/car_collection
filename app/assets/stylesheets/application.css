@@ -20,3 +20,13 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
 }
+
+.component {
+  background: red;
+  width: 82vw;
+  height: 100vh;
+  position: absolute;
+  left: 18vw;
+  top: 0;
+  right: 0;
+}

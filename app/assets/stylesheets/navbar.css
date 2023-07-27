@@ -8,11 +8,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 12vw;
+  width: 18vw;
 }
 
 .navlinks-container {
-  height: 40%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,6 +20,7 @@
 
 .navbar h2 {
   margin: 0;
+  white-space: nowrap;
 }
 
 .navlinks {
@@ -35,7 +36,12 @@
   padding: 0.5rem 0.6rem;
 }
 
-.navlink:hover {
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
   background: rgb(124, 202, 6);
   color: white;
   cursor: pointer;
@@ -49,6 +55,6 @@
 }
 
 .icon {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }

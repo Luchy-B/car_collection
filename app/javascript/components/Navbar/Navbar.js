@@ -3,6 +3,7 @@ import { ImFacebook } from 'react-icons/im';
 import { AiOutlineTwitter, AiFillInstagram } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { TfiPinterest } from 'react-icons/tfi';
+import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const navlist = [
@@ -10,17 +11,24 @@ const Navbar = () => {
     'RESERVE FORM',
     'MY RESERVATION',
     'ADD ITEM',
+    'DETAILS',
     'DELETE ITEM',
   ];
   return (
     <div className="navbar">
       <div className="navlinks-container">
-        <h2>Car collection</h2>
+        <Link to="ITEMS">
+          <h2>Car collection</h2>
+        </Link>
         <ul className="navlinks">
           {navlist.map((item) => (
-            <li className="navlink" key={item}>
+            <NavLink
+              className="navlink"
+              to={item === 'ITEMS' ? '/' : item}
+              key={item}
+            >
               {item}
-            </li>
+            </NavLink>
           ))}
         </ul>
       </div>
