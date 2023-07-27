@@ -5,7 +5,8 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import { TfiPinterest } from 'react-icons/tfi';
 import { NavLink, Link } from 'react-router-dom';
 
-const Navbar = () => {
+// eslint-disable-next-line react/prop-types
+const Navbar = ({ open }) => {
   const navlist = [
     'ITEMS',
     'RESERVE FORM',
@@ -15,41 +16,43 @@ const Navbar = () => {
     'DELETE ITEM',
   ];
   return (
-    <div className="navbar">
-      <div className="navlinks-container">
-        <Link className="logo" to="/">
-          CAR COLLECTION.
-        </Link>
-        <ul className="navlinks">
-          {navlist.map((item) => (
-            <NavLink
-              className="navlink"
-              to={item === 'ITEMS' ? '/' : item}
-              key={item}
-            >
-              {item}
-            </NavLink>
-          ))}
-        </ul>
+    <>
+      <div className={open ? 'navbar visible' : 'navbar'}>
+        <div className="navlinks-container">
+          <Link className="logo" to="/">
+            CAR COLLECTION.
+          </Link>
+          <ul className="navlinks">
+            {navlist.map((item) => (
+              <NavLink
+                className="navlink"
+                to={item === 'ITEMS' ? '/' : item}
+                key={item}
+              >
+                {item}
+              </NavLink>
+            ))}
+          </ul>
+        </div>
+        <div className="social">
+          <a href="#chris" target="_blank" rel="noreferrer">
+            <AiOutlineTwitter className="icon" />
+          </a>
+          <a href="#chris" target="_blank" rel="noreferrer">
+            <ImFacebook className="icon" />
+          </a>
+          <a href="#chris" target="_blank" rel="noreferrer">
+            <FaLinkedinIn className="icon" />
+          </a>
+          <a href="#chris" target="_blank" rel="noreferrer">
+            <AiFillInstagram className="icon" />
+          </a>
+          <a href="#chris" target="_blank" rel="noreferrer">
+            <TfiPinterest className="icon" />
+          </a>
+        </div>
       </div>
-      <div className="social">
-        <a href="#chris" target="_blank" rel="noreferrer">
-          <AiOutlineTwitter className="icon" />
-        </a>
-        <a href="#chris" target="_blank" rel="noreferrer">
-          <ImFacebook className="icon" />
-        </a>
-        <a href="#chris" target="_blank" rel="noreferrer">
-          <FaLinkedinIn className="icon" />
-        </a>
-        <a href="#chris" target="_blank" rel="noreferrer">
-          <AiFillInstagram className="icon" />
-        </a>
-        <a href="#chris" target="_blank" rel="noreferrer">
-          <TfiPinterest className="icon" />
-        </a>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
 
-const DeleteItem = () => <div className="component">DeleteItem</div>;
+const DeleteItem = () => <div>DeleteItem</div>;
 
 export default DeleteItem;
