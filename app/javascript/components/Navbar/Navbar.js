@@ -25,11 +25,21 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="social">
-        <AiOutlineTwitter className="icon" />
-        <ImFacebook className="icon" />
-        <FaLinkedinIn className="icon" />
-        <AiFillInstagram className="icon" />
-        <TfiPinterest className="icon" />
+        <a href="#chris" target="_blank" rel="noreferrer">
+          <AiOutlineTwitter className="icon" />
+        </a>
+        <a href="#chris" target="_blank" rel="noreferrer">
+          <ImFacebook className="icon" />
+        </a>
+        <a href="#chris" target="_blank" rel="noreferrer">
+          <FaLinkedinIn className="icon" />
+        </a>
+        <a href="#chris" target="_blank" rel="noreferrer">
+          <AiFillInstagram className="icon" />
+        </a>
+        <a href="#chris" target="_blank" rel="noreferrer">
+          <TfiPinterest className="icon" />
+        </a>
       </div>
     </div>
   );
