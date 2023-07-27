@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navlinks-container">
-        <Link to="/">
-          <h2>Car collection</h2>
+        <Link className="logo" to="/">
+          CAR COLLECTION.
         </Link>
         <ul className="navlinks">
           {navlist.map((item) => (
