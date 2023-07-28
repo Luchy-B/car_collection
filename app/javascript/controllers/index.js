@@ -2,6 +2,7 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
+// eslint-disable-next-line import/named
 import { application } from './application';
 
 import HelloController from './hello_controller';
