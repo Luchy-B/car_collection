@@ -1,6 +1,12 @@
 .addItem_container {
-  margin-top: 20px;
   margin-left: 30px;
+}
+
+.add-form-title {
+ padding-top: 30px;
+  margin-left: 35%;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .form-group {
@@ -8,7 +14,62 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  margin-left: 30px;
+  margin-top: 30px;
+ margin-right: 25px;
+ padding: 10px;
+  border: 1px solid #fbfbfb;
+  border-radius: 5px;
+}
 
+input {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.btn_add_item {
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5fb523;
+  color: #fbfbfb;
+  font-weight: bold;
+}
+
+.btn_add_item:hover {
+  background-color: #5fb523;
+  color: #fbfbfb;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn_add_item:active {
+  background-color: #5fb523;
+  color: #fbfbfb;
+  font-weight: bold;
+}
+
+.btn_add_item:focus {
+  background-color: #5fb523;
+  color: #fbfbfb;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 480px) {
+  .add-form-title {
+    margin-left: 45%;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  input {
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
 }

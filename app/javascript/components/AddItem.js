@@ -35,7 +35,7 @@ const AddItem = () => {
     return (
       <div className="addItem_container">
         <form onSubmit={handleSubmit}>
-          <h3>Add an Item</h3>
+          <h3 className="add-form-title">Add an Item</h3>
           <div className="form-group">
             <label>
               Name:
@@ -66,7 +66,7 @@ const AddItem = () => {
               <input type="text" name="snapshot" value={carData.snapshot} onChange={handleChange} required />
             </label>
           </div>
-          <button type="submit">Add New Car</button>
+          <button type="submit" className="btn_add_item">Add New Car</button>
         </form>
       </div>
     );
