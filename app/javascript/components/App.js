@@ -16,7 +16,7 @@ const App = () => {
   };
   return (
     <BrowserRouter>
-      <Navbar open={open} />
+      <Navbar open={open} setOpen={setOpen} />
       <div className="component">
         <button type="button" className="menu btn" onClick={handleClick}>
           <FiMenu />

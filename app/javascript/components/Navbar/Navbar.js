@@ -4,9 +4,10 @@ import { AiOutlineTwitter, AiFillInstagram } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { TfiPinterest } from 'react-icons/tfi';
 import { NavLink, Link } from 'react-router-dom';
+import { GrClose } from 'react-icons/gr';
 
 // eslint-disable-next-line react/prop-types
-const Navbar = ({ open }) => {
+const Navbar = ({ open, setOpen }) => {
   const navlist = [
     'ITEMS',
     'RESERVE FORM',
@@ -15,10 +16,16 @@ const Navbar = ({ open }) => {
     'DETAILS',
     'DELETE ITEM',
   ];
+  const handleClick = () => {
+    setOpen(!open);
+  };
   return (
     <>
       <div className={open ? 'navbar visible' : 'navbar'}>
         <div className="navlinks-container">
+          <button type="button" className="close" onClick={handleClick}>
+            <GrClose />
+          </button>
           <Link className="logo" to="/">
             CAR COLLECTION.
           </Link>
