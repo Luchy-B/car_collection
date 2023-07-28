@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Details = () => <div className="component">Details</div>;
+const Details = () => <div>Details</div>;
 
 export default Details;
