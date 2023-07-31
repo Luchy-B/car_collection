@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { BrowserRouter } from 'react-router-dom';
 // import { Routes, Route } from 'react-router';
 // import { FiMenu } from 'react-icons/fi';
 // import Main from './Main';
@@ -18,8 +17,7 @@ const App = () => {
   return (
     <>
       <Registration />
-      {/* <BrowserRouter>
-        <Navbar open={open} setOpen={setOpen} />
+      {/* <Navbar open={open} setOpen={setOpen} />
         <div className="component">
           <button type="button" className="menu btn" onClick={handleClick}>
             <FiMenu />
@@ -31,8 +29,7 @@ const App = () => {
             <Route path="DETAILS" element={<Details />} />
             <Route path="DELETE ITEM" element={<DeleteItem />} />
           </Routes>
-        </div>
-      </BrowserRouter> */}
+        </div> */}
     </>
   );
 };

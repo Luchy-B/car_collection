@@ -1,8 +1,10 @@
 /* eslint-disable camelcase */
-import axios from 'axios';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createUser } from '../../redux/user/userSlice';
 
 const Registration = () => {
+  const dispatch = useDispatch();
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -11,24 +13,7 @@ const Registration = () => {
   });
 
   const handleSubmit = (event) => {
-    axios
-      .post(
-        'http://127.0.0.1:3000/registrations',
-        {
-          user: {
-            email: data.email,
-            password: data.password,
-            password_confirmation: data.password_confirmation,
-          },
-        },
-        { withCredentials: true },
-      )
-      .then((response) => {
-        console.log('registration response', response);
-      })
-      .catch((error) => {
-        console.log('registration error', error);
-      });
+    dispatch(createUser(data));
     setData({
       email: '',
       password: '',
