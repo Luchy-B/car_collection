@@ -31,11 +31,12 @@ const Registration = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="form-container">
+      <form className="form" onSubmit={handleSubmit}>
         <input
           name="email"
           type="email"
+          className="input"
           placeholder="Email"
           value={data.email}
           onChange={handleChange}
@@ -45,6 +46,7 @@ const Registration = () => {
         <input
           name="password"
           type="password"
+          className="input"
           placeholder="Password"
           value={data.password}
           onChange={handleChange}
@@ -54,13 +56,16 @@ const Registration = () => {
         <input
           name="password_confirmation"
           type="password"
-          placeholder="Password"
+          className="input"
+          placeholder="Password Confirmation"
           value={data.password_confirmation}
           onChange={handleChange}
           required
         />
 
-        <button type="submit">Register</button>
+        <button className="submit" type="submit">
+          Register
+        </button>
       </form>
     </div>
   );
