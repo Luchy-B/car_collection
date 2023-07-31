@@ -3,7 +3,7 @@
 }
 
 .add-form-title {
- padding-top: 30px;
+  padding-top: 30px;
   margin-left: 35%;
   font-size: 20px;
   font-weight: bold;
@@ -15,8 +15,8 @@
   align-items: center;
   justify-content: center;
   margin-top: 30px;
- margin-right: 25px;
- padding: 10px;
+  margin-right: 25px;
+  padding: 10px;
   border: 1px solid #fbfbfb;
   border-radius: 5px;
 }
@@ -34,26 +34,26 @@ input {
   margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #5fb523;
+  background-color: rgb(124, 202, 6);
   color: #fbfbfb;
   font-weight: bold;
 }
 
 .btn_add_item:hover {
-  background-color: #5fb523;
+  background-color: rgb(124, 202, 6);
   color: #fbfbfb;
   font-weight: bold;
   cursor: pointer;
 }
 
 .btn_add_item:active {
-  background-color: #5fb523;
+  background-color: rgb(124, 202, 6);
   color: #fbfbfb;
   font-weight: bold;
 }
 
 .btn_add_item:focus {
-  background-color: #5fb523;
+  background-color: rgb(124, 202, 6);
   color: #fbfbfb;
   font-weight: bold;
 }
@@ -71,5 +71,4 @@ input {
     margin-bottom: 10px;
     border-radius: 5px;
   }
-  
 }
