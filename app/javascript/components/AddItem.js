@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { addCar } from '../redux/carsSlice';
 
 const AddItem = () => {
+  const dispatch = useDispatch();
+
   const [carData, setCarData] = useState({
     name: '',
     description: '',
     finance_fee: '',
     purchase_fee: '',
     total_amount: '',
+    duration: '',
     apr: '',
     snapshot: null,
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios.post('http://localhost:3000/api/v1/cars', carData)
-      .then((response) => {
-        console.log('Car added successfully:', response.data);
-      })
-      .catch((error) => {
-        console.error('Error adding car:', error);
-      });
+    dispatch(addCar(carData));
+    setCarData({});
   };
 
   const handleChange = (e) => {
@@ -57,6 +55,11 @@ const AddItem = () => {
 
             <input type="number" name="total_amount" value={carData.total_amount} onChange={handleChange} required placeholder="Total Amount" />
           </label>
+
+          <label htmlFor="duration">
+            <input type="number" name="duration" value={carData.duration} onChange={handleChange} required placeholder="duration" />
+          </label>
+
           <label htmlFor="apr">
 
             <input type="number" name="apr" value={carData.apr} onChange={handleChange} placeholder="APR" />
