@@ -1,5 +1,6 @@
-class CarsController < ApplicationController
+class Api::V1::CarsController < ApplicationController
   before_action :set_car, only: %i[ show update destroy ]
+  skip_before_action :verify_authenticity_token
 
   # GET /cars
   def index
@@ -35,7 +36,12 @@ class CarsController < ApplicationController
 
   # DELETE /cars/1
   def destroy
-    @car.destroy
+    @car.reservations.destroy_all
+    if @car.destroy
+    render json: { message: 'Car was deleted' }
+    else
+      render json: { message: 'There were some errors deleting the car' }, status: :unprocessable_entity
+    end
   end
 
   private
