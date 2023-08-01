@@ -122,3 +122,7 @@
   border-radius: 5px;
   border: 0.1rem solid lightgray;
 }
+
+.status {
+  color: rgb(0, 161, 0);
+}

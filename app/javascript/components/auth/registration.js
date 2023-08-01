@@ -1,10 +1,11 @@
 /* eslint-disable camelcase */
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { createUser } from '../../redux/user/userSlice';
 
 const Registration = () => {
+  const { status } = useSelector((store) => store.user.user);
   const dispatch = useDispatch();
   const [data, setData] = useState({
     email: '',
@@ -74,6 +75,11 @@ const Registration = () => {
           Already have an account?
           <Link to="login"> Login</Link>
         </p>
+        {status === 'created' ? (
+          <p className="status">User created successfully.</p>
+        ) : (
+          <p>No User created.</p>
+        )}
       </div>
     </div>
   );

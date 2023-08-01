@@ -17,22 +17,33 @@ export const createUser = createAsyncThunk(
         { withCredentials: true },
       );
       console.log(res);
-      return initialUser;
+      return res.data;
     } catch (error) {
       return error.message;
     }
   },
 );
 
-export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
-  try {
-    const response = await axios.get(url);
-    console.log(response);
-    return response.data;
-  } catch (error) {
-    return error.message;
-  }
-});
+export const loginUser = createAsyncThunk(
+  'user/loginUser',
+  async (initialUser) => {
+    try {
+      const res = await axios.post(
+        'http://127.0.0.1:3000/session',
+        {
+          user: {
+            ...initialUser,
+          },
+        },
+        { withCredentials: true },
+      );
+      console.log(res);
+      return res.data;
+    } catch (error) {
+      return error.message;
+    }
+  },
+);
 
 const initialState = {
   user: {},
@@ -51,6 +62,18 @@ const userSlice = createSlice({
         user: action.payload,
       }))
       .addCase(createUser.rejected, (state, action) => ({
+        ...state,
+        error: action.payload,
+        isLoading: false,
+      }))
+      .addCase(loginUser.pending, (state) => ({
+        ...state,
+      }))
+      .addCase(loginUser.fulfilled, (state, action) => ({
+        ...state,
+        user: action.payload,
+      }))
+      .addCase(loginUser.rejected, (state, action) => ({
         ...state,
         error: action.payload,
         isLoading: false,
