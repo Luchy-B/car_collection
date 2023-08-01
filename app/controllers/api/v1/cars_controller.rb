@@ -25,15 +25,6 @@ class Api::V1::CarsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /cars/1
-  def update
-    if @car.update(car_params)
-      render json: @car
-    else
-      render json: @car.errors, status: :unprocessable_entity
-    end
-  end
-
   # DELETE /cars/1
   def destroy
     @car.reservations.destroy_all

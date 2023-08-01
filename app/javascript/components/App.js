@@ -8,12 +8,18 @@ import AddItem from './AddItem';
 import Reservation from './Reservation';
 import Details from './Details';
 import DeleteItem from './DeleteItem';
+import ReserveForm from './ReserveForm';
 
 const App = () => {
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen(!open);
   };
+
+  const user = {
+    id: 1,
+  }
+
   return (
     <BrowserRouter>
       <Navbar open={open} setOpen={setOpen} />
@@ -23,6 +29,8 @@ const App = () => {
         </button>
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="RESERVE FORM" element={<ReserveForm user={user} />} />
+
           <Route path="ADD ITEM" element={<AddItem />} />
           <Route path="MY RESERVATION" element={<Reservation />} />
           <Route path="DETAILS" element={<Details />} />

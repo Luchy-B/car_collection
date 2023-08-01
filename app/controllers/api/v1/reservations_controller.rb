@@ -1,5 +1,6 @@
 class Api::V1::ReservationsController < ApplicationController
   before_action :set_reservation, only: %i[ show update destroy ]
+  skip_before_action :verify_authenticity_token
 
   # GET /reservations
   def index
@@ -18,9 +19,9 @@ class Api::V1::ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
-      render json: @reservation, status: :created, location: @reservation
+      render json: { message: 'Reservation was created' }, status: :created
     else
-      render json: @reservation.errors, status: :unprocessable_entity
+      render json: { errors: @reservation.errors }, status: :unprocessable_entity
     end
   end
 
@@ -46,6 +47,6 @@ class Api::V1::ReservationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reservation_params
-      params.require(:reservation).permit(:date, :city, :user, :car)
+      params.require(:reservation).permit(:date, :city, :user_id, :car_id)
     end
 end
