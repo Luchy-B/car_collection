@@ -4,6 +4,7 @@ import axios from 'axios';
 export const addCar = createAsyncThunk('cars/addCar', async (carData) => {
   try {
     const response = await axios.post('http://localhost:3000/api/v1/cars', carData);
+    console.log('API Response:', response.data);
     return response.data;
   } catch (error) {
     console.error('Error adding car:', error.message);
@@ -24,6 +25,7 @@ const carsSlice = createSlice({
         state.cars.push(action.payload);
       })
       .addCase(addCar.rejected, () => {
+
       });
   },
 });
