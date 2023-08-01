@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../../redux/user/userSlice';
+import { loginUser, logoutUser } from '../../redux/user/userSlice';
 
 const Login = () => {
   const { logged_in } = useSelector((store) => store.user.user);
@@ -28,6 +28,11 @@ const Login = () => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    console.log('logout');
   };
 
   return (
@@ -70,6 +75,10 @@ const Login = () => {
           ) : (
             <p>Not logged in</p>
           )}
+
+          <button type="button" onClick={handleLogout}>
+            Logout
+          </button>
         </div>
       </div>
     </div>

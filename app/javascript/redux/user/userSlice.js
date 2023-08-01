@@ -45,8 +45,21 @@ export const loginUser = createAsyncThunk(
   },
 );
 
+export const logoutUser = createAsyncThunk('user/logoutUser', async () => {
+  try {
+    const res = await axios.delete('http://127.0.0.1:3000/logout', {
+      withCredentials: true,
+    });
+    console.log(res);
+    return res.data;
+  } catch (error) {
+    return error.message;
+  }
+});
+
 const initialState = {
   user: {},
+  loggedIn: false,
 };
 
 const userSlice = createSlice({
@@ -64,7 +77,6 @@ const userSlice = createSlice({
       .addCase(createUser.rejected, (state, action) => ({
         ...state,
         error: action.payload,
-        isLoading: false,
       }))
       .addCase(loginUser.pending, (state) => ({
         ...state,
@@ -72,11 +84,23 @@ const userSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, action) => ({
         ...state,
         user: action.payload,
+        loggedIn: true,
       }))
       .addCase(loginUser.rejected, (state, action) => ({
         ...state,
         error: action.payload,
-        isLoading: false,
+      }))
+      .addCase(logoutUser.pending, (state) => ({
+        ...state,
+      }))
+      .addCase(logoutUser.fulfilled, (state, action) => ({
+        ...state,
+        user: action.payload,
+        loggedIn: false,
+      }))
+      .addCase(logoutUser.rejected, (state, action) => ({
+        ...state,
+        error: action.payload,
       }));
   },
 });
