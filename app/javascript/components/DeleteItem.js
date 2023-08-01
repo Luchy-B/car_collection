@@ -14,11 +14,12 @@ const DeleteItem = () => {
   const isDeleteRoute = location.pathname.includes('DELETE');
 
   const handleDeleteCar = async (carId) => {
-    await dispatch(deleteCar(carId));
-    setReloadFlag(!reloadFlag);
+    const shouldDelete = window.confirm('Are you sure you want to delete this car?');
+    if (shouldDelete) {
+      await dispatch(deleteCar(carId));
+      setReloadFlag(!reloadFlag);
+    }
   };
-
-  console.log(cars);
 
   return (
     <div className='cars-container'>
@@ -31,7 +32,6 @@ const DeleteItem = () => {
           }
         </div>
       ))}
-      <h2></h2>
     </div>
   );
 }
