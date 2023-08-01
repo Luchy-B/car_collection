@@ -76,4 +76,4 @@ end
 gem 'cancancan', '~> 3.5'
 gem 'devise', '~> 4.9'
 
-gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors', require: 'rack/cors'
