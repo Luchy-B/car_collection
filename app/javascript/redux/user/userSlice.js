@@ -24,6 +24,16 @@ export const createUser = createAsyncThunk(
   },
 );
 
+export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
+  try {
+    const response = await axios.get(url);
+    console.log(response);
+    return response.data;
+  } catch (error) {
+    return error.message;
+  }
+});
+
 const initialState = {
   user: {},
 };

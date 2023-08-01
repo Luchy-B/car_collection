@@ -74,22 +74,37 @@
 
 .form-container {
   height: 100vh;
-  background: whitesmoke;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: white;
+}
+
+.forms {
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 0 auto;
+  background: whitesmoke;
+}
+
+.forms p {
+  text-align: end;
+}
+
+.forms h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.forms a {
+  color: rgb(0, 51, 255);
 }
 
 .form {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* border: 0.1rem solid lightgray; */
-  width: fit-content;
-  padding: 2rem;
-  border-radius: 10px;
-  margin: 0 auto;
-  background: rgb(124, 202, 6);
 }
 
 .input {
