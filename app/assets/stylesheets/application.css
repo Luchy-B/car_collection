@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:
+    'Trebuchet MS',
+    'Lucida Sans Unicode',
+    'Lucida Grande',
+    'Lucida Sans',
+    Arial,
+    sans-serif;
+}
+
+.component {
+  background: red;
+  width: 82vw;
+  position: relative;
+  height: 100vh;
+  left: 18vw;
+  top: 0;
+  right: 0;
+}
+
+.btn {
+  font-size: 1.8rem;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.close {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .component {
+    width: 100vw;
+    left: 0;
+  }
+
+  .btn {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .close {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem;
+    top: 0.4rem;
+    right: -2rem;
+    position: absolute;
+  }
+}
