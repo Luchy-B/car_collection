@@ -1,4 +1,5 @@
-class CarsController < ApplicationController
+class Api::V1::CarsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_car, only: %i[show update destroy]
 
   # GET /cars
@@ -18,7 +19,7 @@ class CarsController < ApplicationController
     @car = Car.new(car_params)
 
     if @car.save
-      render json: @car, status: :created, location: @car
+      render json: @car, status: :created#, location: @car
     else
       render json: @car.errors, status: :unprocessable_entity
     end
