@@ -1,6 +1,6 @@
 class Api::V1::CarsController < ApplicationController
-  before_action :set_car, only: %i[ show update destroy ]
   skip_before_action :verify_authenticity_token
+  before_action :set_car, only: %i[show update destroy]
 
   # GET /cars
   def index
@@ -25,6 +25,15 @@ class Api::V1::CarsController < ApplicationController
     end
   end
 
+  # PATCH/PUT /cars/1
+  def update
+    if @car.update(car_params)
+      render json: @car
+    else
+      render json: @car.errors, status: :unprocessable_entity
+    end
+  end
+
   # DELETE /cars/1
   def destroy
     @car.reservations.destroy_all
@@ -36,13 +45,15 @@ class Api::V1::CarsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_car
-      @car = Car.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def car_params
-      params.require(:car).permit(:name, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_car
+    @car = Car.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def car_params
+    params.require(:car).permit(:name, :description, :finance_fee, :purchase_fee, :total_amount, :duration, :apr,
+                                :snapshot)
+  end
 end
