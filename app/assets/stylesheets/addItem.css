@@ -60,7 +60,7 @@ input {
   font-weight: bold;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .add-form-title {
     margin-left: 45%;
     font-size: 20px;
@@ -74,3 +74,4 @@ input {
     border-radius: 5px;
   }
 }
+
