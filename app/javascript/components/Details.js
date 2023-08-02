@@ -1,7 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import { TfiArrowCircleRight } from 'react-icons/tfi';
+import { useSelector } from 'react-redux';
 
-const Details = () => (
+export const Details = () => (
+  const { id } = useParams();
+  const { car } = useSelector((store)=> store.car);
+  const detail = car.find((element) => element.id.toString() === id.toString());
   <>
     <div className="detail-container">
 
