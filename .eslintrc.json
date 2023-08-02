@@ -22,6 +22,8 @@
   },
   "ignorePatterns": [
     "dist/",
-    "build/"
+    "build/",
+    "**config.js",
+    "app/assets/**"
   ]
 }

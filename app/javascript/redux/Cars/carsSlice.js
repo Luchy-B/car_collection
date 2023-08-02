@@ -65,7 +65,7 @@ const carsSlice = createSlice({
       .addCase(deleteCar.rejected, (state) => ({
         ...state,
         isLoading: false,
-      }));   
+      }));
   },
 });
 

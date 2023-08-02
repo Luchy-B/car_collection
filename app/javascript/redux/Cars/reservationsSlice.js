@@ -24,7 +24,7 @@ export const createReservation = createAsyncThunk(
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }
-  }
+  },
 );
 
 const initialState = {
@@ -49,7 +49,7 @@ const reservationsSlice = createSlice({
       .addCase(createReservation.rejected, (state) => ({
         ...state,
         isLoading: false,
-      }));   
+      }));
   },
 });
 

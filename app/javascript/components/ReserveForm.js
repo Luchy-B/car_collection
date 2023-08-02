@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCars } from '../redux/Cars/carsSlice';
 import { createReservation } from '../redux/Cars/reservationsSlice';
+import './style/reserveForm.css';
 
-const ReserveForm = ({user, selectedItem}) => {
+const ReserveForm = ({ user, selectedItem }) => {
   const dispatch = useDispatch();
   const initialFormState = {
     date: '',
@@ -20,7 +21,7 @@ const ReserveForm = ({user, selectedItem}) => {
   const { cars } = useSelector((store) => store.cars);
 
   const [reserveData, setReserveData] = useState(initialFormState);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setReserveData((prevState) => ({
@@ -36,22 +37,23 @@ const ReserveForm = ({user, selectedItem}) => {
     e.preventDefault();
     const shouldCreate = window.confirm('Are you sure you want to create this reservation?');
     if (shouldCreate) {
-      await dispatch(createReservation({ reservation: reserveData}));
+      await dispatch(createReservation({ reservation: reserveData }));
+      window.alert('Reservation created succesfully!');
+      resetForm();
     }
-    resetForm();
   };
 
   const cities = [
-    "New York City",
-    "Los Angeles",
-    "Chicago",
-    "Houston",
-    "San Francisco",
-    "Miami",
-    "Washington, D.C.",
-    "Boston",
-    "Atlanta",
-    "Dallas",
+    'New York City',
+    'Los Angeles',
+    'Chicago',
+    'Houston',
+    'San Francisco',
+    'Miami',
+    'Washington, D.C.',
+    'Boston',
+    'Atlanta',
+    'Dallas',
   ];
 
   const dateLimits = () => {
@@ -68,73 +70,107 @@ const ReserveForm = ({user, selectedItem}) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Date:
-          <input type="date"
+    <div className="reserveContainer f c">
+      <div className="reserveFormHeader f c">
+        {selectedItem
+          ? (
+            <h2>
+              BOOK A
+              {selectedItem.name}
+              {' '}
+              TEST-RIDE
+            </h2>
+          ) : (
+            <h2>
+              BOOK A FERRARI TEST-RIDE
+            </h2>
+          )}
+        <p>
+          Driving a Ferrari is the dream of many: we offer you the fantastic opportunity
+          to make your dream come true! You can choose any of these wonderful cars.
+          The test drive is on the track and on road routes designed to ensure a pleasnt and safe driving.
+        </p>
+      </div>
+      <form className="reserveForm f r" onSubmit={handleSubmit}>
+        <div className="reserveInputContainer f">
+          {!selectedItem
+          && (
+          <>
+            <label htmlFor="car_id">
+              Car:
+            </label>
+            <select
+              id="car_id"
+              name="car_id"
+              className="reserveInput"
+              value={reserveData.car_id}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select a car</option>
+              {cars.map((car) => (
+                <option key={car.id} value={car.id}>
+                  {car.name}
+                </option>
+              ))}
+            </select>
+          </>
+          )}
+        </div>
+        <div className="reserveInputContainer f">
+          <label htmlFor="city">
+            City:
+
+            <select
+              id="city"
+              name="city"
+              className="reserveInput"
+              value={reserveData.city}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select a city</option>
+              {cities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div className="reserveInputContainer f">
+          <label htmlFor="date">
+            Date:
+          </label>
+          <input
+            type="date"
+            id="date"
             name="date"
+            className="reserveInput"
             value={reserveData.date}
             min={dateLimits()}
             onChange={handleChange}
             required
           />
-        </label>
-        <label>
-          City:
-          <select name="city"
-            value={reserveData.city}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select a city</option>
-            {cities.map((city) => (
-              <option key={city} value={city}>
-                {city}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label>
-          Car:
-          {selectedItem ?
-            (
-              <span>{selectedItem.name}</span>
-            ) : (
-              <select name="car_id"
-                value={Number(reserveData.car_id)}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select a car</option>
-                {cars.map((car) => (
-                  <option key={car.id} value={car.id}>
-                    {car.name}
-                  </option>
-                ))}
-              </select>
-            )
-          }
-        </label>
-        <button type="submit">Submit</button>
+        </div>
+        <button className="submitReserve f" type="submit">Book Now</button>
       </form>
     </div>
   );
-}
+};
 
-ReserveForm.prototype = {
+ReserveForm.propTypes = {
   user: PropTypes.shape({
     id: PropTypes.number.isRequired,
-  }),
+  }).isRequired,
   selectedItem: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
   }),
-}
+};
 
 ReserveForm.defaultProps = {
   selectedItem: null,
-}
-
+};
 
 export default ReserveForm;

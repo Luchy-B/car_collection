@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect, useState } from 'react';
-import { getCars, deleteCar } from '../redux/Cars/carsSlice';
 import { useLocation } from 'react-router-dom';
+import { getCars, deleteCar } from '../redux/Cars/carsSlice';
 
 const DeleteItem = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,7 @@ const DeleteItem = () => {
   useEffect(() => {
     dispatch(getCars());
   }, [dispatch, reloadFlag]);
-  const { cars, isLoading } = useSelector((store) => store.cars);
+  const { cars } = useSelector((store) => store.cars);
   const location = useLocation();
   const isDeleteRoute = location.pathname.includes('DELETE');
 
@@ -22,17 +22,16 @@ const DeleteItem = () => {
   };
 
   return (
-    <div className='cars-container'>
+    <div className="carsContainer f">
       {cars.map((car) => (
-        <div className='car-item'>
-          <img src={car.snapshot} alt="categoryIcon"/>
+        <div className="carItem f r" key={car.id}>
+          <img src={car.snapshot} alt="categoryIcon" />
           <h2>{car.name}</h2>
-          {isDeleteRoute &&
-            <button onClick={() => handleDeleteCar(car.id)}>Delete Item</button>
-          }
+          {isDeleteRoute
+            && <button type="button" onClick={() => handleDeleteCar(car.id)}>Delete Item</button>}
         </div>
       ))}
     </div>
   );
-}
+};
 export default DeleteItem;

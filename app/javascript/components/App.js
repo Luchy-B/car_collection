@@ -18,7 +18,7 @@ const App = () => {
 
   const user = {
     id: 1,
-  }
+  };
 
   return (
     <BrowserRouter>
