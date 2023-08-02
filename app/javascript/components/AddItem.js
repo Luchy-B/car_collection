@@ -5,7 +5,7 @@ import { addCar } from '../redux/carsSlice';
 const AddItem = () => {
   const dispatch = useDispatch();
 
-  const [carData, setCarData] = useState({
+  const initialState = {
     name: '',
     description: '',
     finance_fee: '',
@@ -14,12 +14,15 @@ const AddItem = () => {
     duration: '',
     apr: '',
     snapshot: null,
-  });
+  };
+
+  const [carData, setCarData] = useState(initialState);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(addCar(carData));
-    setCarData({});
+
+    setCarData(initialState);
   };
 
   const handleChange = (e) => {
