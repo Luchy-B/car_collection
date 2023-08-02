@@ -12,7 +12,7 @@ const DeleteItem = () => {
   const { cars } = useSelector((store) => store.cars);
   const location = useLocation();
   const isDeleteRoute = location.pathname.includes('DELETE');
-
+  console.log(cars);
   const handleDeleteCar = async (carId) => {
     const shouldDelete = window.confirm('Are you sure you want to delete this car?');
     if (shouldDelete) {

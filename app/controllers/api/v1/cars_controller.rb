@@ -6,7 +6,13 @@ class Api::V1::CarsController < ApplicationController
   def index
     @cars = Car.all
 
-    render json: @cars
+    cars_with_snapshot_url = @cars.map do |car|
+      car_data = car.attributes
+      car_data[:snapshot_url] = url_for(car.snapshot)
+      car_data
+    end
+
+    render json: cars_with_snapshot_url
   end
 
   # GET /cars/1
