@@ -88,7 +88,8 @@ const ReserveForm = ({ user, selectedItem }) => {
         <p>
           Driving a Ferrari is the dream of many: we offer you the fantastic opportunity
           to make your dream come true! You can choose any of these wonderful cars.
-          The test drive is on the track and on road routes designed to ensure a pleasnt and safe driving.
+          The test drive is on the track and on road routes designed to ensure a pleasnt
+          and safe driving.
         </p>
       </div>
       <form className="reserveForm f r" onSubmit={handleSubmit}>
@@ -120,23 +121,22 @@ const ReserveForm = ({ user, selectedItem }) => {
         <div className="reserveInputContainer f">
           <label htmlFor="city">
             City:
-
-            <select
-              id="city"
-              name="city"
-              className="reserveInput"
-              value={reserveData.city}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select a city</option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
           </label>
+          <select
+            id="city"
+            name="city"
+            className="reserveInput"
+            value={reserveData.city}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select a city</option>
+            {cities.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="reserveInputContainer f">
           <label htmlFor="date">
