@@ -29,12 +29,11 @@ const App = () => {
         </button>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="RESERVE FORM" element={<ReserveForm user={user} />} />
-
-          <Route path="ADD ITEM" element={<AddItem />} />
-          <Route path="MY RESERVATION" element={<Reservation />} />
+          <Route path="RESERVE_FORM" element={<ReserveForm user={user} />} />
+          <Route path="ADD_ITEM" element={<AddItem />} />
+          <Route path="MY_RESERVATION" element={<Reservation />} />
           <Route path="DETAILS" element={<Details />} />
-          <Route path="DELETE ITEM" element={<DeleteItem />} />
+          <Route path="DELETE_ITEM" element={<DeleteItem />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -25,7 +25,7 @@ const DeleteItem = () => {
     <div className="carsContainer f">
       {cars.map((car) => (
         <div className="carItem f r" key={car.id}>
-          <img src={car.snapshot} alt="categoryIcon" />
+          <img src={car.snapshot_url} alt="categoryIcon" />
           <h2>{car.name}</h2>
           {isDeleteRoute
             && <button type="button" onClick={() => handleDeleteCar(car.id)}>Delete Item</button>}

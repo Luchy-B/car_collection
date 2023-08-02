@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get '*path', to: 'root#index', constraints: ->(req) { !req.path.starts_with?('/api') }
+  get '/ITEMS','/RESERVE_FORM', '/MY_RESERVATION', '/ADD_ITEM', '/DETAILS', '/DELETE_ITEM', to: 'root#index'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
