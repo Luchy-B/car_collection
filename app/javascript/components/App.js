@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router';
+import { Provider } from 'react-redux';
 import { FiMenu } from 'react-icons/fi';
+import store from '../store';
 import Main from './Main';
 import Navbar from './Navbar/Navbar';
 import AddItem from './AddItem';
@@ -15,21 +17,23 @@ const App = () => {
     setOpen(!open);
   };
   return (
-    <BrowserRouter>
-      <Navbar open={open} setOpen={setOpen} />
-      <div className="component">
-        <button type="button" className="menu btn" onClick={handleClick}>
-          <FiMenu />
-        </button>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="ADD ITEM" element={<AddItem />} />
-          <Route path="MY RESERVATION" element={<Reservation />} />
-          <Route path="DETAILS" element={<Details />} />
-          <Route path="DELETE ITEM" element={<DeleteItem />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Navbar open={open} setOpen={setOpen} />
+        <div className="component">
+          <button type="button" className="menu btn" onClick={handleClick}>
+            <FiMenu />
+          </button>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="ADD ITEM" element={<AddItem />} />
+            <Route path="MY RESERVATION" element={<Reservation />} />
+            <Route path="DETAILS" element={<Details />} />
+            <Route path="DELETE ITEM" element={<DeleteItem />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </Provider>
   );
 };
 
