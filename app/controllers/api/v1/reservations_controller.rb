@@ -4,9 +4,15 @@ class Api::V1::ReservationsController < ApplicationController
 
   # GET /reservations
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.all.includes(:car)
 
-    render json: @reservations
+    reservations_with_car_name = @reservations.map do |reservation|
+      reservation_data = reservation.attributes
+      reservation_data[:car_name] = reservation.car.name
+      reservation_data
+    end
+  
+    render json: reservations_with_car_name
   end
 
   # GET /reservations/1
