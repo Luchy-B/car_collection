@@ -18,13 +18,14 @@ const AddItem = () => {
     e.preventDefault();
     const carData = new FormData();
     carData.append('car[name]', name);
-    carData.append('car[description]', name);
-    carData.append('car[finance_fee]', name);
-    carData.append('car[purchase_fee]', name);
-    carData.append('car[total_amount]', name);
-    carData.append('car[duration]', name);
-    carData.append('car[apr]', name);
-    carData.append('car[snapshot]', name);
+    carData.append('car[description]', description);
+    carData.append('car[finance_fee]', financeFee);
+    carData.append('car[purchase_fee]', purchaseFee);
+    carData.append('car[total_amount]', totalAmount);
+    carData.append('car[duration]', duration);
+    carData.append('car[apr]', apr);
+    carData.append('car[snapshot]', snapshot);
+    console.log(carData);
     await dispatch(addCar(carData));
 
   };
@@ -65,7 +66,7 @@ const AddItem = () => {
           </label>
           <label htmlFor="snapshot">
 
-            <input type="file" name="snapshot" onChange={(e) => setName(e.target.files[0])} placeholder="Snapshot" />
+            <input type="file" name="snapshot" onChange={(e) => setSnapshot(e.target.files[0])} placeholder="Snapshot" />
           </label>
         </div>
         <button type="submit" className="btn_add_item">Add New Car</button>
