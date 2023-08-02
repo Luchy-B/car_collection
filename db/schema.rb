@@ -69,7 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_27_083635) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "role", default: "normal", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

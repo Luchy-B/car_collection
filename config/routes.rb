@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'root#index'
-  get '*path', to: 'root#index'
 
   namespace :api do
     namespace :v1 do
