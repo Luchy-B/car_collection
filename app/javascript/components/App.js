@@ -13,13 +13,16 @@ import Login from './auth/Login';
 
 const App = () => {
   const [open, setOpen] = useState(false);
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(localStorage.getItem('login'));
 
   const { loggedIn } = useSelector((store) => store.user);
 
   useEffect(() => {
-    setLogin(loggedIn);
+    setLogin(localStorage.getItem('login'));
   }, [loggedIn]);
+
+  console.log(localStorage.getItem('login'));
+  console.log('login', login);
 
   const handleClick = () => {
     setOpen(!open);

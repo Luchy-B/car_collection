@@ -5,9 +5,12 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import { TfiPinterest } from 'react-icons/tfi';
 import { NavLink, Link } from 'react-router-dom';
 import { GrClose } from 'react-icons/gr';
+import { useDispatch } from 'react-redux';
+import { logoutUser } from '../../redux/user/userSlice';
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ open, setOpen }) => {
+  const dispatch = useDispatch;
   const navlist = [
     'ITEMS',
     'RESERVE FORM',
@@ -18,6 +21,13 @@ const Navbar = ({ open, setOpen }) => {
   ];
   const handleClick = () => {
     setOpen(!open);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('login');
+    localStorage.removeItem('current_user');
+    window.location.reload();
+    dispatch(logoutUser());
   };
   return (
     <>
@@ -41,6 +51,9 @@ const Navbar = ({ open, setOpen }) => {
             ))}
           </ul>
         </div>
+        <button type="button" onClick={handleLogout}>
+          Logout
+        </button>
         <div className="social">
           <a href="#chris" target="_blank" rel="noreferrer">
             <AiOutlineTwitter className="icon" />

@@ -81,11 +81,18 @@ const userSlice = createSlice({
       .addCase(loginUser.pending, (state) => ({
         ...state,
       }))
-      .addCase(loginUser.fulfilled, (state, action) => ({
-        ...state,
-        user: action.payload,
-        loggedIn: true,
-      }))
+      .addCase(loginUser.fulfilled, (state, action) => {
+        localStorage.setItem('login', true);
+        localStorage.setItem(
+          'current_user_id',
+          JSON.stringify(action.payload.user.id),
+        );
+        return {
+          ...state,
+          user: action.payload,
+          loggedIn: true,
+        };
+      })
       .addCase(loginUser.rejected, (state, action) => ({
         ...state,
         error: action.payload,
