@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCars } from '../redux/Cars/carsSlice';
-import { createReservation } from '../redux/Cars/reservationsSlice';
+import { createReservation } from '../redux/Reservations/reservationsSlice';
 import './style/reserveForm.css';
 
 const ReserveForm = ({ user, selectedItem }) => {
