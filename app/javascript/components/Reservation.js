@@ -7,6 +7,7 @@ const Reservation = () => {
   const { data: reservations, loading, error } = useSelector(
     (state) => state.reservations
   );
+  console.log('show data:', data)
 
   useEffect(() => {
     dispatch(fetchReservations());
