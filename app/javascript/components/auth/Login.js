@@ -1,12 +1,13 @@
 /* eslint-disable camelcase */
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../../redux/user/userSlice';
 
 const Login = () => {
   const { logged_in } = useSelector((store) => store.user.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -15,6 +16,7 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     dispatch(loginUser(data));
+    navigate('/');
     setData({
       email: '',
       password: '',
