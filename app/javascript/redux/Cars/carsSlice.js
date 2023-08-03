@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const url = 'http://127.0.0.1:3000/api/v1/cars';
 
@@ -28,6 +29,17 @@ export const deleteCar = createAsyncThunk(
     }
   },
 );
+
+export const addCar = createAsyncThunk('cars/addCar', async (carData) => {
+  try {
+    const response = await axios.post(url, carData);
+    console.log('API Response:', response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error adding car:', error.message);
+    throw error;
+  }
+});
 
 const initialState = {
   cars: [],
@@ -63,6 +75,14 @@ const carsSlice = createSlice({
         isLoading: false,
       }))
       .addCase(deleteCar.rejected, (state) => ({
+        ...state,
+        isLoading: false,
+      }))
+      .addCase(addCar.fulfilled, (state) => ({
+        ...state,
+        isLoading: false,
+      }))
+      .addCase(addCar.rejected, (state) => ({
         ...state,
         isLoading: false,
       }));

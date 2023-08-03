@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addCar } from '../redux/Cars/carsSlice';
 
 const AddItem = () => {
   const dispatch = useDispatch();
@@ -25,8 +27,8 @@ const AddItem = () => {
     carData.append('car[snapshot]', snapshot);
     console.log(carData);
     await dispatch(addCar(carData));
-
-  };
+    window.location.reload();
+  }
 
   return (
     <div className="addItem_container">
