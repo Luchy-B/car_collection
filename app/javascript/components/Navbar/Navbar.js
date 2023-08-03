@@ -53,7 +53,7 @@ const Navbar = ({ open, setOpen }) => {
             ))}
           </ul>
         </div>
-        <button type="button" onClick={handleLogout}>
+        <button type="button" className="submit logout" onClick={handleLogout}>
           Logout
         </button>
         <div className="social">
