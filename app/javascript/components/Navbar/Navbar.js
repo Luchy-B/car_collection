@@ -9,12 +9,12 @@ import { GrClose } from 'react-icons/gr';
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ open, setOpen }) => {
   const navlist = [
-    {name: 'ITEMS', to: 'ITEMS'},
-    {name: 'RESERVE FORM', to: 'RESERVE_FORM'},
-    {name: 'MY RESERVATION', to: 'MY_RESERVATION'},
-    {name: 'ADD ITEM', to: 'ADD_ITEM'},
-    {name: 'DETAILS', to: 'DETAILS'},
-    {name: 'DELETE ITEM', to: 'DELETE_ITEM'}
+    { name: 'ITEMS', to: 'ITEMS' },
+    { name: 'RESERVE FORM', to: 'RESERVE_FORM' },
+    { name: 'MY RESERVATION', to: 'MY_RESERVATION' },
+    { name: 'ADD ITEM', to: 'ADD_ITEM' },
+    { name: 'DETAILS', to: 'DETAILS' },
+    { name: 'DELETE ITEM', to: 'DELETE_ITEM' },
   ];
 
   const handleClick = () => {

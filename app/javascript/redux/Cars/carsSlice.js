@@ -30,14 +30,12 @@ export const deleteCar = createAsyncThunk(
   },
 );
 
-export const addCar = createAsyncThunk('cars/addCar', async (carData) => {
+export const addCar = createAsyncThunk('cars/addCar', async (carData, thunkAPI) => {
   try {
     const response = await axios.post(url, carData);
-    console.log('API Response:', response.data);
     return response.data;
   } catch (error) {
-    console.error('Error adding car:', error.message);
-    throw error;
+    return thunkAPI.rejectWithValue(error);
   }
 });
 

@@ -25,10 +25,9 @@ const AddItem = () => {
     carData.append('car[duration]', duration);
     carData.append('car[apr]', apr);
     carData.append('car[snapshot]', snapshot);
-    console.log(carData);
     await dispatch(addCar(carData));
     window.location.reload();
-  }
+  };
 
   return (
     <div className="addItem_container">
