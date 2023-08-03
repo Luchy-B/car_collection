@@ -16,7 +16,6 @@ export const createUser = createAsyncThunk(
         },
         { withCredentials: true },
       );
-      console.log(res);
       return res.data;
     } catch (error) {
       return error.message;
@@ -37,7 +36,6 @@ export const loginUser = createAsyncThunk(
         },
         { withCredentials: true },
       );
-      console.log(res);
       return res.data;
     } catch (error) {
       return error.message;
@@ -50,7 +48,6 @@ export const logoutUser = createAsyncThunk('user/logoutUser', async () => {
     const res = await axios.delete('http://127.0.0.1:3000/logout', {
       withCredentials: true,
     });
-    console.log(res);
     return res.data;
   } catch (error) {
     return error.message;

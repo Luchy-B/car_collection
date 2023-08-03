@@ -21,9 +21,6 @@ const App = () => {
     setLogin(localStorage.getItem('login'));
   }, [loggedIn]);
 
-  console.log(localStorage.getItem('login'));
-  console.log('login', login);
-
   const handleClick = () => {
     setOpen(!open);
   };
