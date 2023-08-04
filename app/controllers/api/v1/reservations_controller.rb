@@ -1,5 +1,5 @@
 class Api::V1::ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show update destroy]
+  before_action :set_reservation, only: %i[ show update destroy ]
   skip_before_action :verify_authenticity_token
 
   # GET /reservations
@@ -11,7 +11,7 @@ class Api::V1::ReservationsController < ApplicationController
       reservation_data[:car_name] = reservation.car.name
       reservation_data
     end
-
+  
     render json: reservations_with_car_name
   end
 
@@ -46,14 +46,13 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_reservation
+      @reservation = Reservation.find(params[:id])
+    end
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_reservation
-    @reservation = Reservation.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def reservation_params
-    params.require(:reservation).permit(:date, :city, :user_id, :car_id)
-  end
+    # Only allow a list of trusted parameters through.
+    def reservation_params
+      params.require(:reservation).permit(:date, :city, :user_id, :car_id)
+    end
 end
