@@ -64,7 +64,7 @@ const Login = () => {
           </form>
           <p>
             Create an Account?
-            <Link to="/"> Register</Link>
+            <Link to="/"> Go Back</Link>
           </p>
 
           {logged_in ? (

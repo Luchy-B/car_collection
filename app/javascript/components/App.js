@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router';
 import { useSelector } from 'react-redux';
 import { FiMenu } from 'react-icons/fi';
-import Main from './Main';
+import Main from './auth/Main';
 import Navbar from './Navbar/Navbar';
 import AddItem from './AddItem';
 import Reservation from './Reservation';
@@ -41,7 +41,10 @@ const App = () => {
             </button>
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="RESERVE_FORM" element={<ReserveForm user={user} />} />
+              <Route
+                path="RESERVE_FORM"
+                element={<ReserveForm user={user} />}
+              />
               <Route path="ADD_ITEM" element={<AddItem />} />
               <Route path="MY_RESERVATION" element={<Reservation />} />
               <Route path="DETAILS" element={<Details />} />
@@ -51,7 +54,8 @@ const App = () => {
         </>
       ) : (
         <Routes>
-          <Route path="/" element={<Registration />} />
+          <Route path="/" element={<Main />} />
+          <Route path="registration" element={<Registration />} />
           <Route path="login" element={<Login />} />
         </Routes>
       )}

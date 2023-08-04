@@ -73,7 +73,7 @@ const Registration = () => {
         </form>
         <p>
           Already have an account?
-          <Link to="login"> Login</Link>
+          <Link to="/"> Go Back</Link>
         </p>
         {status === 'created' ? (
           <p className="status">User created successfully.</p>
