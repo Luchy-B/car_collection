@@ -4,14 +4,17 @@ import { fetchReservations } from '../redux/reservationsSlice';
 
 const Reservation = () => {
   const dispatch = useDispatch();
-  const reservations = useSelector(
-    (state) => state.reservations.data,
-  );
 
   useEffect(() => {
     dispatch(fetchReservations());
   }, [dispatch]);
+  
+  const { reservations } = useSelector(
+    (store) => store.reservations,
+  );
 
+  console.log(reservations);
+  
   return (
     <div className="reserve_link_container">
       <h2 className="reserve_link_title">My Reservations</h2>

@@ -9,8 +9,9 @@ export const fetchReservations = createAsyncThunk(
     try {
       const response = await fetch(API_URL);
       // const response = await axios.get(API_URL);
-      console.log('API Response:', response);
-      return response;
+      const data = await response.json();
+      console.log(data);
+      return data;
     } catch (error) {
       console.error('API Error:', error);
       return thunkAPI.rejectWithValue('Failed to fetch reservations');
@@ -18,48 +19,30 @@ export const fetchReservations = createAsyncThunk(
   },
 );
 
-const initialReservations = [
-  {
-    id: 1,
-    car_name: 'Ferrari 2023',
-    date: '2023-08-02',
-    city: 'Abuja, Nigeria',
-  },
-  {
-    id: 2,
-    car_name: 'Ferrari 2022',
-    date: '2023-08-03',
-    city: 'Abuja, Nigeria',
-  },
-];
+const initialState = {
+  reservations: [],
+  isLoading: true,
+}
 
 const reservationsSlice = createSlice({
   name: 'reservations',
-  initialState: {
-    data: initialReservations,
-  },
-
+  initialState,
   reducers: {},
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addCase(fetchReservations.pending, (state) => {
-  //       state.loading = true;
-  //     })
-  //     .addCase(fetchReservations.fulfilled, (state, action) => {
-  //       state.loading = false;
-  //       state.data = action.payload;
-  //     })
-  //     .addCase(fetchReservations.rejected, (state) => {
-  //       state.loading = false;
-  //       state.error = true;
-  //     });
-  // },
-  extraReducers: {
-    [fetchReservations.fulfilled]: (state, action) => {
-      let newState = state.reservations;
-      newState = action.payload;
-      return newState;
-    },
+  extraReducers: (builder) => {
+    builder
+    .addCase(fetchReservations.pending, (state) => ({
+      ...state,
+      isLoading: true,
+    }))
+    .addCase(fetchReservations.fulfilled, (state, action) => ({
+      ...state,
+      isLoading: false,
+      reservations: action.payload,
+    }))
+    .addCase(fetchReservations.rejected, (state) => ({
+      ...state,
+      isLoading: true,
+    }))
   },
 });
 
