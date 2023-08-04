@@ -5,7 +5,16 @@ Rails.application.routes.draw do
   delete :logout, to: 'session#logout'
   get :logged_in, to: "session#logged_in"
   root 'root#index'
-  get '*path', to: 'root#index', constraints: ->(req) { !req.path.starts_with?('/api') }
+
+  namespace :api do
+    namespace :v1 do
+      resources :cars
+      resources :reservations
+    end
+  end
+
+  get '/ITEMS','/RESERVE_FORM', '/MY_RESERVATION', '/ADD_ITEM', '/DETAILS', '/DELETE_ITEM', to: 'root#index'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

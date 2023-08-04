@@ -20,6 +20,7 @@ const Navbar = ({ open, setOpen }) => {
     { name: 'DETAILS', to: 'DETAILS' },
     { name: 'DELETE ITEM', to: 'DELETE_ITEM' },
   ];
+
   const handleClick = () => {
     setOpen(!open);
   };
