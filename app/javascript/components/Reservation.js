@@ -4,33 +4,33 @@ import { fetchReservations } from '../redux/reservationsSlice';
 
 const Reservation = () => {
   const dispatch = useDispatch();
-  const { data: reservations, loading, error } = useSelector(
-    (state) => state.reservations
+  const reservations = useSelector(
+    (state) => state.reservations.data,
   );
-  console.log('show data:', data)
 
   useEffect(() => {
     dispatch(fetchReservations());
   }, [dispatch]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
   return (
     <div className="reserve_link_container">
-      <h2>My Reservations</h2>
+      <h2 className="reserve_link_title">My Reservations</h2>
       {reservations && reservations.length > 0 ? (
         <ul>
           {reservations.map((reservation) => (
             <li key={reservation.id}>
-              <p>Name: {reservation.car_name}</p>
-              <p>Date: {reservation.date}</p>
-              <p>City: {reservation.city}</p>
+              <p>
+                Name:
+                {reservation.car_name}
+              </p>
+              <p>
+                Date:
+                {reservation.date}
+              </p>
+              <p>
+                City:
+                {reservation.city}
+              </p>
             </li>
           ))}
         </ul>
