@@ -40,32 +40,32 @@ const AddItem = () => {
           </label>
           <label htmlFor="description">
 
-            <input type="text" name="description" onChange={(e) => setDescription(e.target.value)} required placeholder="Description" className="add_item_input"  />
+            <input type="text" name="description" onChange={(e) => setDescription(e.target.value)} required placeholder="Description" className="add_item_input" />
           </label>
           <label htmlFor="finance_fee">
 
-            <input type="number" name="finance_fee" onChange={(e) => setFinanceFee(e.target.value)} required placeholder="Finance Fee" className="add_item_input"  />
+            <input type="number" name="finance_fee" onChange={(e) => setFinanceFee(e.target.value)} required placeholder="Finance Fee" className="add_item_input" />
           </label>
           <label htmlFor="purchase_fee">
 
-            <input type="number" name="purchase_fee" onChange={(e) => setPurchaseFee(e.target.value)} required placeholder="Purchase Fee" className="add_item_input"  />
+            <input type="number" name="purchase_fee" onChange={(e) => setPurchaseFee(e.target.value)} required placeholder="Purchase Fee" className="add_item_input" />
           </label>
           <label htmlFor="total_amount">
 
-            <input type="number" name="total_amount" onChange={(e) => setTotalAmount(e.target.value)} required placeholder="Total Amount" className="add_item_input"  />
+            <input type="number" name="total_amount" onChange={(e) => setTotalAmount(e.target.value)} required placeholder="Total Amount" className="add_item_input" />
           </label>
 
           <label htmlFor="duration">
-            <input type="number" name="duration" onChange={(e) => setDuration(e.target.value)} required placeholder="duration" className="add_item_input"  />
+            <input type="number" name="duration" onChange={(e) => setDuration(e.target.value)} required placeholder="duration" className="add_item_input" />
           </label>
 
           <label htmlFor="apr">
 
-            <input type="number" name="apr" onChange={(e) => setApr(e.target.value)} placeholder="APR" className="add_item_input"  />
+            <input type="number" name="apr" onChange={(e) => setApr(e.target.value)} placeholder="APR" className="add_item_input" />
           </label>
           <label htmlFor="snapshot">
 
-            <input type="file" name="snapshot" onChange={(e) => setSnapshot(e.target.files[0])} placeholder="Snapshot"  className="add_item_input" />
+            <input type="file" name="snapshot" onChange={(e) => setSnapshot(e.target.files[0])} placeholder="Snapshot" className="add_item_input" />
           </label>
         </div>
         <button type="submit" className="btn_add_item">Add New Car</button>
