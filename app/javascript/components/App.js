@@ -42,7 +42,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="RESERVE_FORM" element={<ReserveForm user={user} />} />
-          <Route path="ADD_ITEM" element={<AddItem />} />
+              <Route path="ADD_ITEM" element={<AddItem />} />
               <Route path="MY_RESERVATION" element={<Reservation />} />
               <Route path="DETAILS" element={<Details />} />
               <Route path="DELETE_ITEM" element={<DeleteItem />} />
