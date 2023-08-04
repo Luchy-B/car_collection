@@ -77,5 +77,5 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.19'
 
 gem 'rack-cors', require: 'rack/cors'
 
+gem 'cancancan', '~> 3.5'
 gem 'devise', '~> 4.9'
-gem "cancancan", "~> 3.5"
