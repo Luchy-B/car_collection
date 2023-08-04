@@ -113,12 +113,6 @@ html {
   align-items: center;
 }
 
-.car-reserve p {
-  margin: 0;
-  font-weight: 500;
-  font-size: 1.1rem;
-}
-
 .car-details li p {
   margin: 0;
   padding: 0;
@@ -143,10 +137,11 @@ html {
   width: 10rem;
   background-color: #6fb900;
   font-weight: 500;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem;
+  padding: 0.8rem 1.8rem;
   color: white;
   text-decoration: none;
   cursor: pointer;
@@ -155,6 +150,12 @@ html {
 
 .car-reserve:hover {
   background-color: #5e9d00;
+}
+
+.car-reserve p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .arrow-right-reserve {
@@ -181,8 +182,8 @@ html {
 }
 
 .vehicle-container::-webkit-scrollbar {
-  display: none;
-}
+    display: none;
+  }
 
 .vehicle-holder {
   display: flex;
@@ -191,6 +192,7 @@ html {
   justify-content: center;
   cursor: pointer;
 }
+
 
 .vehicle-circle {
   width: 10rem;
@@ -208,6 +210,7 @@ html {
   width: calc(100% + 6rem);
   transition: transform 0.3s ease;
 }
+
 
 .vehicle:hover {
   transform: scale(1.03);
@@ -232,6 +235,7 @@ html {
   padding: 18px 0;
 }
 
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 10px;
@@ -248,9 +252,8 @@ html {
   html {
     font-size: 14px;
   }
-
-  /* Details */
-  .detail-container {
+   /* Details */
+   .detail-container {
     width: 100%;
   }
 

@@ -55,7 +55,6 @@ export const addCar = createAsyncThunk('cars/addCar', async (carData, thunkAPI) 
 
 const initialState = {
   cars: [],
-  car: [],
   isLoading: true,
 };
 
