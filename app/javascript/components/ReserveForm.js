@@ -11,7 +11,7 @@ const ReserveForm = ({ user, selectedItem }) => {
     date: '',
     city: '',
     user_id: user.id,
-    car_id: selectedItem ? +selectedItem.id : 0,
+    car_id: selectedItem ? +selectedItem.id : null,
   };
 
   useEffect(() => {
