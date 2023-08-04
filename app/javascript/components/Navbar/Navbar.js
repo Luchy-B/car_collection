@@ -9,13 +9,14 @@ import { GrClose } from 'react-icons/gr';
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ open, setOpen }) => {
   const navlist = [
-    'ITEMS',
-    'RESERVE FORM',
-    'MY RESERVATION',
-    'ADD ITEM',
-    'DETAILS',
-    'DELETE ITEM',
+    { name: 'ITEMS', to: 'ITEMS' },
+    { name: 'RESERVE FORM', to: 'RESERVE_FORM' },
+    { name: 'MY RESERVATION', to: 'MY_RESERVATION' },
+    { name: 'ADD ITEM', to: 'ADD_ITEM' },
+    { name: 'DETAILS', to: 'DETAILS' },
+    { name: 'DELETE ITEM', to: 'DELETE_ITEM' },
   ];
+
   const handleClick = () => {
     setOpen(!open);
   };
@@ -33,10 +34,10 @@ const Navbar = ({ open, setOpen }) => {
             {navlist.map((item) => (
               <NavLink
                 className="navlink"
-                to={item === 'ITEMS' ? '/' : item}
+                to={item === 'ITEMS' ? '/' : item.to}
                 key={item}
               >
-                {item}
+                {item.name}
               </NavLink>
             ))}
           </ul>
