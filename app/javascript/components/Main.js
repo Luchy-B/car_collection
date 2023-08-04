@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-export const Main = () => {
+const Main = () => {
   const { cars, isLoading } = useSelector((store) => store.cars);
   if (isLoading) {
     return (
