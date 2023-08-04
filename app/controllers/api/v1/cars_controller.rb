@@ -17,6 +17,7 @@ class Api::V1::CarsController < ApplicationController
 
   # GET /cars/1
   def show
+    @car = Car.find(params[:id])
     render json: @car
   end
 

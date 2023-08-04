@@ -70,6 +70,172 @@ html {
   flex-direction: row;
 }
 
+/* Details */
+.detail-container {
+  width: calc(100% - 50rem);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  user-select: none;
+}
+
+.details-content {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem;
+}
+
+.details-content > h3 {
+  text-align: end;
+  margin-top: 5rem;
+}
+
+.details-description {
+  font-size: 0.6rem;
+  margin-left: auto;
+  padding-top: 5px;
+  text-align: end;
+}
+
+.car-details {
+  list-style-type: none;
+  padding-top: 20px;
+}
+
+.car-details li {
+  padding: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-details li p {
+  margin: 0;
+  padding: 0;
+}
+
+.car-details li:nth-child(odd) {
+  background-color: #d4d4d4;
+}
+
+.car-details li:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.car-detail {
+  font-weight: 500;
+}
+
+.car-reserve {
+  border-radius: 3.6rem;
+  position: relative;
+  top: 10rem;
+  width: 10rem;
+  background-color: #6fb900;
+  font-weight: 500;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.8rem;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.car-reserve:hover {
+  background-color: #5e9d00;
+}
+
+.car-reserve p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.arrow-right-reserve {
+  font-size: 1.2rem;
+}
+
+/* Main Page */
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-container {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  overflow-x: scroll;
+  justify-content: center;
+  gap: 5rem;
+  transform: translateY(8rem);
+}
+
+.vehicle-container::-webkit-scrollbar {
+    display: none;
+  }
+
+.vehicle-holder {
+  display: flex;
+  width: 16rem;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.vehicle-circle {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #a7bfd9;
+}
+
+.vehicle {
+  width: calc(100% + 6rem);
+  transition: transform 0.3s ease;
+}
+
+
+.vehicle:hover {
+  transform: scale(1.03);
+}
+
+.vehicle-model {
+  margin: 28px auto;
+  text-align: center;
+  width: fit-content;
+  justify-self: center;
+  font-weight: 700;
+  padding: 18px 0;
+  border-bottom: 2px dashed gray;
+}
+
+.vehicle-description {
+  font-size: 0.875rem;
+  line-height: 20px;
+  color: rgb(177, 177, 177);
+  text-align: center;
+  justify-self: center;
+  padding: 18px 0;
+}
+
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 10px;
@@ -85,6 +251,31 @@ html {
 @media only screen and (min-width: 768px) and (max-width: 900px) {
   html {
     font-size: 14px;
+  }
+   /* Details */
+   .detail-container {
+    width: 100%;
+  }
+
+  .detail-container img {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .details-content {
+    padding: 0 2rem;
+    gap: 1rem;
+  }
+
+  .details-content > h3 {
+    margin-top: 1rem;
+  }
+
+  .car-reserve {
+    position: relative;
+    left: 0;
+    top: 1.6rem;
   }
 }
 
