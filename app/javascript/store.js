@@ -4,7 +4,7 @@ import reservationsReducer from './redux/Reservations/reservationsSlice';
 
 const store = configureStore({
   reducer: {
-    car: carsReducer,
+    cars: carsReducer,
     reservations: reservationsReducer,
   },
 });

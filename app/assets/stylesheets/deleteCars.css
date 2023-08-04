@@ -1,0 +1,48 @@
+.carsContainer {
+  height: 100%;
+  justify-content: center;
+  color: #fff;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  overflow: scroll;
+  background-color: #96bf01;
+}
+
+.carItem {
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+  background-color: #fff;
+}
+
+.carItem img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: #7d9c0b;
+}
+
+.carItem h2 {
+  font-size: 1rem;
+  width: 10rem;
+  color: #7d9c0b;
+  text-align: center;
+}
+
+.carItem button {
+  padding: 1rem;
+  color: #fff;
+  border: 10px solid #fff;
+  background-color: #7d9c0b;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.8rem;
+}
