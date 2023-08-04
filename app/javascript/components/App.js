@@ -11,6 +11,7 @@ import DeleteItem from './DeleteItem';
 import Registration from './auth/registration';
 import Login from './auth/Login';
 import ReserveForm from './ReserveForm';
+import Mainpage from './Mainpage';
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -40,7 +41,7 @@ const App = () => {
               <FiMenu />
             </button>
             <Routes>
-              <Route path="/" element={<Main />} />
+              <Route path="/" element={<Mainpage />} />
               <Route
                 path="RESERVE_FORM"
                 element={<ReserveForm user={user} />}
