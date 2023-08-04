@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchReservations } from '../redux/reservationsSlice';
+import { fetchReservations } from '../redux/Reservations/reservationsSlice';
 
 const Reservation = () => {
   const dispatch = useDispatch();
@@ -8,13 +8,13 @@ const Reservation = () => {
   useEffect(() => {
     dispatch(fetchReservations());
   }, [dispatch]);
-  
+
   const { reservations } = useSelector(
     (store) => store.reservations,
   );
 
   console.log(reservations);
-  
+
   return (
     <div className="reserve_link_container">
       <h2 className="reserve_link_title">My Reservations</h2>
@@ -23,15 +23,12 @@ const Reservation = () => {
           {reservations.map((reservation) => (
             <li key={reservation.id}>
               <p>
-                Name:
                 {reservation.car_name}
               </p>
               <p>
-                Date:
                 {reservation.date}
               </p>
               <p>
-                City:
                 {reservation.city}
               </p>
             </li>
