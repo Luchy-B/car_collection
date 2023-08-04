@@ -8,6 +8,10 @@ export const fetchReservations = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       const response = await fetch(API_URL);
+      if (!response.ok) {
+        // Handle non-2xx HTTP response status
+        throw new Error('Failed to fetch reservations');
+      }
       const data = await response.json();
       console.log(data);
       return data;
@@ -15,9 +19,9 @@ export const fetchReservations = createAsyncThunk(
       console.error('API Error:', error);
       return thunkAPI.rejectWithValue('Failed to fetch reservations');
     }
-
   },
 );
+
 
 const baseReservationUrl = 'http://127.0.0.1:3000/api/v1/reservations';
 
@@ -57,37 +61,51 @@ const reservationsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchReservations.pending, (state) => ({
-        ...state,
-        isLoading: true,
-      }))
-      .addCase(fetchReservations.fulfilled, (state, action) => ({
-        ...state,
-        isLoading: false,
-        reservations: action.payload,
-      }))
-      .addCase(fetchReservations.rejected, (state) => ({
-        ...state,
-        isLoading: true,
-      }));
-  },
-
-  reducers: {},
-  extraReducers: (builder) => {
-    builder
-      .addCase(createReservation.pending, (state) => ({
-        ...state,
-        isLoading: true,
-      }))
-      .addCase(createReservation.fulfilled, (state) => ({
-        ...state,
-        isLoading: false,
-      }))
-      .addCase(createReservation.rejected, (state) => ({
-        ...state,
-        isLoading: false,
-      }));
+    .addCase(fetchReservations.pending, (state) => ({
+      ...state,
+      isLoading: true,
+    }))
+    .addCase(fetchReservations.fulfilled, (state, action) => ({
+      ...state,
+      isLoading: false,
+      reservations: action.payload,
+    }))
+    .addCase(fetchReservations.rejected, (state) => ({
+      ...state,
+      isLoading: false, // Should be false, not true
+    }))
+    .addCase(createReservation.pending, (state) => ({
+      ...state,
+      isLoading: true,
+    }))
+    .addCase(createReservation.fulfilled, (state) => ({
+      ...state,
+      isLoading: false,
+    }))
+    .addCase(createReservation.rejected, (state) => ({
+      ...state,
+      isLoading: false,
+    }));
+    
   },
 });
+
+  // reducers: {},
+  // extraReducers: (builder) => {
+  //   builder
+  //     .addCase(createReservation.pending, (state) => ({
+  //       ...state,
+  //       isLoading: true,
+  //     }))
+  //     .addCase(createReservation.fulfilled, (state) => ({
+  //       ...state,
+  //       isLoading: false,
+  //     }))
+  //     .addCase(createReservation.rejected, (state) => ({
+  //       ...state,
+  //       isLoading: false,
+  //     }));
+  // },
+// });
 
 export default reservationsSlice.reducer;

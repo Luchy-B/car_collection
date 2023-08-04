@@ -19,16 +19,16 @@ const Reservation = () => {
     <div className="reserve_link_container">
       <h2 className="reserve_link_title">My Reservations</h2>
       {reservations && reservations.length > 0 ? (
-        <ul>
+        <ul className="reservation_link_body">
           {reservations.map((reservation) => (
             <li key={reservation.id}>
-              <p>
+              <p className="reserve-link-name">
                 {reservation.car_name}
               </p>
-              <p>
+              <p className="reserve-link-name">
                 {reservation.date}
               </p>
-              <p>
+              <p className="reserve-link-name">
                 {reservation.city}
               </p>
             </li>

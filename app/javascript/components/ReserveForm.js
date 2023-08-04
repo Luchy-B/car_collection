@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCars } from '../redux/Cars/carsSlice';
 import { createReservation } from '../redux/Reservations/reservationsSlice';
-import './style/reserveForm.css';
+// import './style/reserveForm.css';
 
 const ReserveForm = ({ user, selectedItem }) => {
   const dispatch = useDispatch();
@@ -88,7 +88,7 @@ const ReserveForm = ({ user, selectedItem }) => {
         <p>
           Driving a Ferrari is the dream of many: we offer you the fantastic opportunity
           to make your dream come true! You can choose any of these wonderful cars.
-          The test drive is on the track and on road routes designed to ensure a pleasnt
+          The test drive is on the track and on road routes designed to ensure a pleasant
           and safe driving.
         </p>
       </div>
