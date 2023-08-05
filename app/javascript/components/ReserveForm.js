@@ -5,12 +5,13 @@ import { getCars } from '../redux/Cars/carsSlice';
 import { createReservation } from '../redux/Reservations/reservationsSlice';
 import './style/reserveForm.css';
 
-const ReserveForm = ({ user, selectedItem }) => {
+const ReserveForm = ({ selectedItem }) => {
   const dispatch = useDispatch();
+  const userId = localStorage.getItem('current_user_id');
   const initialFormState = {
     date: '',
     city: '',
-    user_id: user.id,
+    user_id: userId,
     car_id: selectedItem ? +selectedItem.id : null,
   };
 
@@ -19,7 +20,6 @@ const ReserveForm = ({ user, selectedItem }) => {
   }, [dispatch]);
 
   const { cars } = useSelector((store) => store.cars);
-
   const [reserveData, setReserveData] = useState(initialFormState);
 
   const handleChange = (e) => {
@@ -160,9 +160,6 @@ const ReserveForm = ({ user, selectedItem }) => {
 };
 
 ReserveForm.propTypes = {
-  user: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-  }).isRequired,
   selectedItem: PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
