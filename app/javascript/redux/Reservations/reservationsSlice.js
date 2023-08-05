@@ -88,22 +88,4 @@ const reservationsSlice = createSlice({
   },
 });
 
-// reducers: {},
-// extraReducers: (builder) => {
-//   builder
-//     .addCase(createReservation.pending, (state) => ({
-//       ...state,
-//       isLoading: true,
-//     }))
-//     .addCase(createReservation.fulfilled, (state) => ({
-//       ...state,
-//       isLoading: false,
-//     }))
-//     .addCase(createReservation.rejected, (state) => ({
-//       ...state,
-//       isLoading: false,
-//     }));
-// },
-// });
-
 export default reservationsSlice.reducer;
