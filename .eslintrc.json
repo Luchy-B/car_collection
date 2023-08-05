@@ -20,7 +20,8 @@
     "import/no-unresolved": "off",
     "no-shadow": "off",
     "no-alert": "off",
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-param-reassign": 0
   },
   "ignorePatterns": [
     "dist/",

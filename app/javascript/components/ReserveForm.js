@@ -88,7 +88,7 @@ const ReserveForm = ({ selectedItem }) => {
         <p>
           Driving a Ferrari is the dream of many: we offer you the fantastic opportunity
           to make your dream come true! You can choose any of these wonderful cars.
-          The test drive is on the track and on road routes designed to ensure a pleasnt
+          The test drive is on the track and on road routes designed to ensure a pleasant
           and safe driving.
         </p>
       </div>
