@@ -1,14 +1,20 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-export const addCar = createAsyncThunk('cars/addCar', async (carData, thunkAPI) => {
-  try {
-    const response = await axios.post('http://localhost:3000/api/v1/cars', carData);
-    return response.data;
-  } catch (error) {
-    return thunkAPI.rejectWithValue(error);
-  }
-});
+export const addCar = createAsyncThunk(
+  'cars/addCar',
+  async (carData, thunkAPI) => {
+    try {
+      const response = await axios.post(
+        'http://localhost:3000/api/v1/cars',
+        carData,
+      );
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error);
+    }
+  },
+);
 
 const url = 'http://127.0.0.1:3000/api/v1/cars';
 
