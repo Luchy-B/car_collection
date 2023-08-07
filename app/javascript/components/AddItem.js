@@ -31,44 +31,95 @@ const AddItem = () => {
 
   return (
     <div className="addItem_container">
-      <form onSubmit={handleSubmit}>
-        <h3 className="add-form-title">Add an Item</h3>
-        <div className="form-group">
+      <form onSubmit={handleSubmit} className="form">
+        <div className="forms form-add">
+          <h3>Add an Item</h3>
           <label htmlFor="name">
-
-            <input type="text" name="name" onChange={(e) => setName(e.target.value)} required placeholder="Name" className="add_item_input" />
+            <input
+              type="text"
+              name="name"
+              className="input"
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder="Name"
+            />
           </label>
           <label htmlFor="description">
-
-            <input type="text" name="description" onChange={(e) => setDescription(e.target.value)} required placeholder="Description" className="add_item_input" />
+            <input
+              type="text"
+              name="description"
+              className="input"
+              onChange={(e) => setDescription(e.target.value)}
+              required
+              placeholder="Description"
+            />
           </label>
           <label htmlFor="finance_fee">
-
-            <input type="number" name="finance_fee" onChange={(e) => setFinanceFee(e.target.value)} required placeholder="Finance Fee" className="add_item_input" />
+            <input
+              type="number"
+              name="finance_fee"
+              className="input"
+              onChange={(e) => setFinanceFee(e.target.value)}
+              required
+              placeholder="Finance Fee"
+            />
           </label>
           <label htmlFor="purchase_fee">
-
-            <input type="number" name="purchase_fee" onChange={(e) => setPurchaseFee(e.target.value)} required placeholder="Purchase Fee" className="add_item_input" />
+            <input
+              type="number"
+              name="purchase_fee"
+              className="input"
+              onChange={(e) => setPurchaseFee(e.target.value)}
+              required
+              placeholder="Purchase Fee"
+            />
           </label>
           <label htmlFor="total_amount">
-
-            <input type="number" name="total_amount" onChange={(e) => setTotalAmount(e.target.value)} required placeholder="Total Amount" className="add_item_input" />
+            <input
+              type="number"
+              name="total_amount"
+              className="input"
+              onChange={(e) => setTotalAmount(e.target.value)}
+              required
+              placeholder="Total Amount"
+            />
           </label>
 
           <label htmlFor="duration">
-            <input type="number" name="duration" onChange={(e) => setDuration(e.target.value)} required placeholder="duration" className="add_item_input" />
+            <input
+              type="number"
+              name="duration"
+              className="input"
+              onChange={(e) => setDuration(e.target.value)}
+              required
+              placeholder="duration"
+            />
           </label>
 
           <label htmlFor="apr">
-
-            <input type="number" name="apr" onChange={(e) => setApr(e.target.value)} placeholder="APR" className="add_item_input" />
+            <input
+              type="number"
+              name="apr"
+              className="input"
+              onChange={(e) => setApr(e.target.value)}
+              placeholder="APR"
+            />
           </label>
           <label htmlFor="snapshot">
-
-            <input type="file" name="snapshot" onChange={(e) => setSnapshot(e.target.files[0])} placeholder="Snapshot" className="add_item_input" />
+            <input
+              type="file"
+              name="snapshot"
+              className="input"
+              onChange={(e) => setSnapshot(e.target.files[0])}
+              placeholder="Snapshot"
+            />
+            <br />
+            (PNG file only)
           </label>
+          <button type="submit" className="submit">
+            Add New Car
+          </button>
         </div>
-        <button type="submit" className="btn_add_item">Add New Car</button>
       </form>
     </div>
   );
