@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { TfiArrowCircleRight } from 'react-icons/tfi';
-import { FiPlay } from 'react-icons/rx';
+import { RxTrackPrevious } from 'react-icons/rx';
 import { getCar } from '../redux/Cars/carsSlice';
 
 const Details = () => {
@@ -20,9 +20,15 @@ const Details = () => {
       {car
       && (
       <>
-        <div className="detailImg">
-          <img className="vehicle" src={car.snapshot_url} alt="categoryIcon" />
+        <div>
+          <div className="detailsBack-container">
+            <RxTrackPrevious className="detailsBack" />
+          </div>
+          <div className="detailImg">
+            <img className="detailVehicle" src={car.snapshot_url} alt="categoryIcon" />
+          </div>
         </div>
+
         <div className="detail-container">
           <div className="details-content">
             <h3>{car.name}</h3>
@@ -61,7 +67,9 @@ const Details = () => {
               <TfiArrowCircleRight className="arrow-right-reserve" />
             </div>
           </div>
-          <FiPlay className="pagination-previous" />
+          {/* <div className="detailsBack-container">
+            <RxTrackPrevious className="detailsBack" />
+          </div> */}
         </div>
       </>
       )}
