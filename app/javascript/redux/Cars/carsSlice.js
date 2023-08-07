@@ -39,48 +39,51 @@ export const deleteCar = createAsyncThunk(
   },
 );
 
+const initialState = {
+  cars: [],
+  isLoading: true,
+  car: {},
+};
+
 const carsSlice = createSlice({
   name: 'cars',
-  initialState: {
-    cars: [],
-    isLoading: true,
-    error: null,
-  },
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(addCar.fulfilled, (state, action) => {
-        state.cars.push(action.payload);
-        state.isLoading = false;
-        state.error = null;
-      })
-      .addCase(addCar.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message;
-      })
-      .addCase(getCars.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(getCars.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.cars = action.payload;
-        state.error = null;
-      })
-      .addCase(getCars.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message;
-      })
-      .addCase(deleteCar.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(deleteCar.fulfilled, (state) => {
-        state.isLoading = false;
-        state.error = null;
-      })
-      .addCase(deleteCar.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message;
-      });
+    .addCase(getCars.pending, (state) => ({
+      ...state,
+      isLoading: true,
+    }))
+    .addCase(getCars.fulfilled, (state, action) => ({
+      ...state,
+      isLoading: false,
+      cars: action.payload,
+    }))
+    .addCase(getCars.rejected, (state) => ({
+      ...state,
+      isLoading: true,
+    }))
+    .addCase(deleteCar.pending, (state) => ({
+      ...state,
+      isLoading: true,
+    }))
+    .addCase(deleteCar.fulfilled, (state) => ({
+      ...state,
+      isLoading: false,
+    }))
+    .addCase(deleteCar.rejected, (state) => ({
+      ...state,
+      isLoading: false,
+    }))
+    .addCase(addCar.fulfilled, (state) => ({
+      ...state,
+      isLoading: false,
+    }))
+    .addCase(addCar.rejected, (state) => ({
+      ...state,
+      isLoading: false,
+    }));
   },
 });
 
