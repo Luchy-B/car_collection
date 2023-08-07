@@ -16,7 +16,6 @@ const Navbar = ({ open, setOpen }) => {
     { name: 'RESERVE FORM', to: 'RESERVE_FORM' },
     { name: 'MY RESERVATION', to: 'MY_RESERVATION' },
     { name: 'ADD ITEM', to: 'ADD_ITEM' },
-    { name: 'DETAILS', to: 'DETAILS' },
     { name: 'DELETE ITEM', to: 'DELETE_ITEM' },
   ];
 
@@ -53,7 +52,7 @@ const Navbar = ({ open, setOpen }) => {
               <NavLink
                 className="navlink"
                 to={item === 'ITEMS' ? '/' : item.to}
-                key={item}
+                key={item.name}
               >
                 {item.name}
               </NavLink>

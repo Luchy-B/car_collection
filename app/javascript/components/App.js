@@ -28,10 +28,6 @@ const App = () => {
     setOpen(!open);
   };
 
-  const user = {
-    id: 1,
-  };
-
   return (
     <>
       {login ? (
@@ -43,10 +39,7 @@ const App = () => {
             </button>
             <Routes>
               <Route path="/" element={<Mainpage />} />
-              <Route
-                path="RESERVE_FORM"
-                element={<ReserveForm user={user} />}
-              />
+              <Route path="RESERVE_FORM/:carId?" element={<ReserveForm />} />
               <Route path="ADD_ITEM" element={<AddItem />} />
               <Route path="MY_RESERVATION" element={<Reservation />} />
               <Route path="DETAILS/:id" element={<Details />} />

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/ITEMS','/RESERVE_FORM', '/MY_RESERVATION', '/ADD_ITEM', '/DETAILS/*path', '/DELETE_ITEM', to: 'root#index'
+  get '/ITEMS','/RESERVE_FORM(/:path)', '/MY_RESERVATION', '/ADD_ITEM', '/DETAILS/*path', '/DELETE_ITEM', to: 'root#index'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
