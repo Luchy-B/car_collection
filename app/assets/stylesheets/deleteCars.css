@@ -6,8 +6,9 @@
   padding: 3rem;
   gap: 2rem;
   flex-wrap: wrap;
-  overflow: scroll;
+  overflow-y: auto;
   background-color: #96bf01;
+  align-content: center;
 }
 
 .carItem {
@@ -30,7 +31,7 @@
 }
 
 
-.carItem img:hover {
+.carItem:hover {
   transform: scale(1.03);
 }
 

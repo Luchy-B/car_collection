@@ -139,9 +139,10 @@
   border: 1px solid #efefef;
 }
 
-.pagination.enabled {
+.pagination.active {
   background-color: #98bf11;
   border: 1px solid #98bf11;
+  cursor: pointer;
 }
 
 .prev {
