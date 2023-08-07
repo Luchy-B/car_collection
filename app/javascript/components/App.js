@@ -28,8 +28,6 @@ const App = () => {
     setOpen(!open);
   };
 
-  console.log(open);
-
   const user = {
     id: 1,
   };

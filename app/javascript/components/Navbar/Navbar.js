@@ -32,7 +32,7 @@ const Navbar = ({ open, setOpen }) => {
     return () => {
       document.removeEventListener('click', handleClickOutsideNavbar);
     };
-  }, [open]);
+  }, [setOpen, open]);
 
   const handleLogout = () => {
     localStorage.removeItem('login');
