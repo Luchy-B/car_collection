@@ -20,7 +20,7 @@ const Details = () => {
       {car
       && (
       <>
-        <div>
+        <div className="detailsPage1">
           <div className="detailsBack-container">
             <RxTrackPrevious className="detailsBack" />
           </div>

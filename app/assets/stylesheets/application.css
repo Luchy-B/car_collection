@@ -115,6 +115,11 @@ html {
 }
 
 /* Details */
+.detailsPage1 {
+  width: 70%;
+  padding-top: 12%;
+}
+
 .detail-container {
   width: calc(100% - 50rem);
   position: absolute;
@@ -135,9 +140,9 @@ html {
 
 .detailVehicle {
   left: 0;
-  padding-top: 40px;
-  padding-left: 10px;
-  width: 80%;
+  /* padding-top: 40px; */
+  padding: 10px 10px 10px 10px;
+  width: 100%;
   object-position: left;
 }
 
@@ -158,33 +163,12 @@ html {
   color: #fff;
 }
 
-/* .detailsBack {
-  border-radius: 3.6rem;
-  position: relative;
-  top: 10rem;
-  width: 10rem;
-  background-color: #6fb900;
-  font-weight: 500;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 1.8rem;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.5s ease;
-} */
-
-/* .detailsBack:hover {
-  background-color: #5e9d00;
-} */
-
 .details-content {
   flex: 1 1 30%;
   display: flex;
   flex-direction: column;
   padding: 5rem 2rem;
+  width: 100%;
 }
 
 .details-content > h3 {
