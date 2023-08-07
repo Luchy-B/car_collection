@@ -23,9 +23,12 @@ const App = () => {
     setLogin(localStorage.getItem('login'));
   }, [loggedIn]);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setOpen(!open);
   };
+
+  console.log(open);
 
   const user = {
     id: 1,

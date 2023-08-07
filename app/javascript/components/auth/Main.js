@@ -5,7 +5,7 @@ const Main = () => (
   <>
     <div className="main">
       <h1>Welcome to Car Collection.</h1>
-      <div className="main-container">
+      <div className="main-division">
         <NavLink className="main-btn" to="login">
           Login
         </NavLink>
