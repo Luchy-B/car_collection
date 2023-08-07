@@ -57,39 +57,39 @@ const carsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    .addCase(getCars.pending, (state) => ({
-      ...state,
-      isLoading: true,
-    }))
-    .addCase(getCars.fulfilled, (state, action) => ({
-      ...state,
-      isLoading: false,
-      cars: action.payload,
-    }))
-    .addCase(getCars.rejected, (state) => ({
-      ...state,
-      isLoading: true,
-    }))
-    .addCase(deleteCar.pending, (state) => ({
-      ...state,
-      isLoading: true,
-    }))
-    .addCase(deleteCar.fulfilled, (state) => ({
-      ...state,
-      isLoading: false,
-    }))
-    .addCase(deleteCar.rejected, (state) => ({
-      ...state,
-      isLoading: false,
-    }))
-    .addCase(addCar.fulfilled, (state) => ({
-      ...state,
-      isLoading: false,
-    }))
-    .addCase(addCar.rejected, (state) => ({
-      ...state,
-      isLoading: false,
-    }));
+      .addCase(getCars.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(getCars.fulfilled, (state, action) => ({
+        ...state,
+        isLoading: false,
+        cars: action.payload,
+      }))
+      .addCase(getCars.rejected, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(deleteCar.pending, (state) => ({
+        ...state,
+        isLoading: true,
+      }))
+      .addCase(deleteCar.fulfilled, (state) => ({
+        ...state,
+        isLoading: false,
+      }))
+      .addCase(deleteCar.rejected, (state) => ({
+        ...state,
+        isLoading: false,
+      }))
+      .addCase(addCar.fulfilled, (state) => ({
+        ...state,
+        isLoading: false,
+      }))
+      .addCase(addCar.rejected, (state) => ({
+        ...state,
+        isLoading: false,
+      }));
   },
 });
 
