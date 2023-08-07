@@ -4,13 +4,13 @@ import { TfiArrowCircleRight } from 'react-icons/tfi';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCar } from '../redux/Cars/carsSlice';
 
-export const Details = () => {
+const Details = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
 
   useEffect(() => {
     dispatch(getCar(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
 
   const { car } = useSelector((store) => store.cars);
 
