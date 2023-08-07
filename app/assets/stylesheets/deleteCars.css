@@ -29,6 +29,11 @@
   background-color: #7d9c0b;
 }
 
+
+.carItem img:hover {
+  transform: scale(1.03);
+}
+
 .carItem h2 {
   font-size: 1rem;
   width: 10rem;

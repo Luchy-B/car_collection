@@ -13,10 +13,8 @@ export const fetchReservations = createAsyncThunk(
         throw new Error('Failed to fetch reservations');
       }
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (error) {
-      console.error('API Error:', error);
       return thunkAPI.rejectWithValue('Failed to fetch reservations');
     }
   },

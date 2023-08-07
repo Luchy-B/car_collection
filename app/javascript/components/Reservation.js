@@ -13,8 +13,6 @@ const Reservation = () => {
     (store) => store.reservations,
   );
 
-  console.log(reservations);
-
   return (
     <div className="reserve_link_container">
       <h2 className="reserve_link_title">My Reservations</h2>
