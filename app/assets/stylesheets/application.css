@@ -126,6 +126,13 @@ html {
   user-select: none;
 }
 
+.detailImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .details-content {
   flex: 1 1 30%;
   display: flex;
