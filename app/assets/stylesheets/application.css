@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
 html {
   height: 100vh;
   width: 100vw;
@@ -25,6 +27,7 @@ html {
   margin: 0;
   padding: 0;
   font-family:
+    'Archivo Black',
     'Trebuchet MS',
     'Lucida Sans Unicode',
     'Lucida Grande',
@@ -35,7 +38,6 @@ html {
 }
 
 .component {
-  background: red;
   width: 82vw;
   position: relative;
   height: 100vh;
@@ -72,11 +74,6 @@ html {
 
 .main h1 {
   color: white;
-}
-
-.main-container {
-  display: flex;
-  gap: 2rem;
 }
 
 .main-btn {
