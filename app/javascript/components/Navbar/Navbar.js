@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ImFacebook } from 'react-icons/im';
 import { AiOutlineTwitter, AiFillInstagram } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { TfiPinterest } from 'react-icons/tfi';
 import { NavLink, Link, useNavigate } from 'react-router-dom';
-import { GrClose } from 'react-icons/gr';
 import { useDispatch } from 'react-redux';
 import { logoutUser } from '../../redux/user/userSlice';
 
@@ -21,24 +20,31 @@ const Navbar = ({ open, setOpen }) => {
     { name: 'DELETE ITEM', to: 'DELETE_ITEM' },
   ];
 
-  const handleClick = () => {
-    setOpen(!open);
-  };
+  useEffect(() => {
+    const handleClickOutsideNavbar = (event) => {
+      if (open && !event.target.closest('.navbar') && !event.target.closest('.menu')) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutsideNavbar);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutsideNavbar);
+    };
+  }, [open]);
 
   const handleLogout = () => {
     localStorage.removeItem('login');
     localStorage.removeItem('current_user');
     navigate('/');
-    window.location.reload();
     dispatch(logoutUser());
+    window.location.reload();
   };
   return (
     <>
       <div className={open ? 'navbar visible' : 'navbar'}>
         <div className="navlinks-container">
-          <button type="button" className="close" onClick={handleClick}>
-            <GrClose />
-          </button>
           <Link className="logo" to="/">
             CAR COLLECTION.
           </Link>
