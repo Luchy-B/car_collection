@@ -117,12 +117,10 @@ html {
 /* Details */
 .detailsPage1 {
   width: 70%;
-  padding-top: 12%;
 }
 
 .detail-container {
-  display: flex;
-  flex-direction: row;
+  height: 100%;
 }
 
 .detail-container img {
@@ -148,11 +146,11 @@ html {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   display: flex;
-  position: absolute;
   left: 0;
   padding: 15px 15px 15px 30px;
   color: #d4d4d4;
-  margin-top: 28rem;
+  width: max-content;
+  margin-bottom: 3rem;
 }
 
 .detailsBack {
@@ -160,10 +158,10 @@ html {
 }
 
 .details-content {
-  flex: 1 1 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
-  padding: 7rem 2rem 7rem 2rem;
+  padding: 0 2rem;
 }
 
 .details-content > h3 {
@@ -213,9 +211,8 @@ html {
 }
 
 .car-reserve {
+  margin-top: 1rem;
   border-radius: 3.6rem;
-  position: relative;
-  top: 6rem;
   width: 10rem;
   background-color: #98bf11;
   font-weight: 500;
@@ -237,6 +234,21 @@ html {
   font-size: 1.2rem;
 }
 
+.details-holder {
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
+.apr-detail {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.apr-detail span {
+  font-weight: bolder;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 10px;
@@ -244,10 +256,6 @@ html {
 
   .main-btn {
     width: 100px;
-  }
-
-  .detailsBack-container {
-    margin-top: 60rem;
   }
 }
 
@@ -264,16 +272,6 @@ html {
 
   .details-content {
     padding: 2rem 2rem;
-  }
-
-  .car-reserve {
-    position: relative;
-    left: 0;
-    top: 1.6rem;
-  }
-
-  .detailsBack-container {
-    margin-top: 50rem;
   }
 }
 
@@ -313,12 +311,14 @@ html {
     flex-direction: column;
   }
 
-  .detailsBack-container {
-    margin-top: 60rem;
+  .details-content {
+    width: 80%;
   }
 
-  .details-content {
-    padding: 1rem 2rem 5rem 2rem;
+  .details-holder {
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
   }
 }
 
