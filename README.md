@@ -7,7 +7,6 @@
 📗 Table of Contents
 
 - [📖 \[Car\_Collection\] ](#-car_collection-)
-  - [Car\_Collection application is a website application that allows users to add car brand, make reservation of any choice of car, delete car from collection of car and users can see a detail of any car.](#car_collection-application-is-a-website-application-that-allows-users-to-add-car-brand-make-reservation-of-any-choice-of-car-delete-car-from-collection-of-car-and-users-can-see-a-detail-of-any-car)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -29,8 +28,7 @@
 
 # 📖 [Car_Collection] <a name="about-project"></a>
 
-
- ## Car_Collection application is a website application that allows users to add car brand, make reservation of any choice of car, delete car from collection of car and users can see a detail of any car.
+Car_Collection application is a website application that allows users to add car brand, make reservation of any choice of car, delete car from collection of car and users can see a detail of any car.
 
 ## 🛠 Built With <a name="built-with"></a>
 <details>
