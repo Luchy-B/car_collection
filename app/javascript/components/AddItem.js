@@ -41,60 +41,51 @@ const AddItem = () => {
         <div className="forms form-add">
           <h3>Add an Item</h3>
           <label htmlFor="name">
-            Name:
             <input
               type="text"
               name="name"
               className="input"
-              value={name}
               onChange={(e) => setName(e.target.value)}
               required
               placeholder="Name"
             />
           </label>
           <label htmlFor="description">
-            Description:
             <input
               type="text"
               name="description"
               className="input"
-              value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
               placeholder="Description"
             />
           </label>
           <label htmlFor="finance_fee">
-            Finance Fee:
             <input
               type="number"
               name="finance_fee"
               className="input"
-              value={financeFee}
               onChange={(e) => setFinanceFee(e.target.value)}
               required
               placeholder="Finance Fee"
             />
           </label>
           <label htmlFor="purchase_fee">
-            Purchase Fee:
             <input
               type="number"
               name="purchase_fee"
               className="input"
-              value={purchaseFee}
               onChange={(e) => setPurchaseFee(e.target.value)}
               required
               placeholder="Purchase Fee"
             />
           </label>
           <label htmlFor="total_amount">
-            Total Amount:
             <input
               type="number"
               name="total_amount"
               className="input"
-              value={totalAmount}
+              value={totalAmount === 0 ? 'Total Amount' : totalAmount}
               onChange={(e) => setTotalAmount(e.target.value)}
               required
               placeholder="Total Amount"
@@ -102,30 +93,25 @@ const AddItem = () => {
             />
           </label>
           <label htmlFor="duration">
-            Duration:
             <input
               type="number"
               name="duration"
               className="input"
-              value={duration}
               onChange={(e) => setDuration(e.target.value)}
               required
               placeholder="Duration"
             />
           </label>
           <label htmlFor="apr">
-            APR:
             <input
               type="number"
               name="apr"
               className="input"
-              value={apr}
               onChange={(e) => setApr(e.target.value)}
               placeholder="APR"
             />
           </label>
           <label htmlFor="snapshot">
-            Snapshot:
             <input
               type="file"
               name="snapshot"
@@ -135,20 +121,17 @@ const AddItem = () => {
 
             />
           </label>
-          <button type="submit" className="submit">
+          <button
+            type="submit"
+            className="submit"
+            disabled={totalAmount < purchaseFee}
+          >
             Add New Car
           </button>
         </div>
         {totalAmount < purchaseFee && (
           <p>Total amount must be greater than or equal to purchase fee.</p>
         )}
-        <button
-          type="submit"
-          className="submit"
-          disabled={totalAmount < purchaseFee}
-        >
-          Add New Car
-        </button>
       </form>
     </div>
   );
