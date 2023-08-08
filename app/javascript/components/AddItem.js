@@ -119,7 +119,9 @@ const AddItem = () => {
               onChange={(e) => setSnapshot(e.target.files[0])}
               placeholder="Snapshot"
 
-            />
+            /> 
+                <br>
+                (PNG file only)
           </label>
           <button
             type="submit"
