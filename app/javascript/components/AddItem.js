@@ -45,11 +45,11 @@ const AddItem = () => {
             <input
               type="text"
               name="name"
+              className="input"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
               placeholder="Name"
-              className="add_item_input"
             />
           </label>
           <label htmlFor="description">
@@ -57,11 +57,11 @@ const AddItem = () => {
             <input
               type="text"
               name="description"
+              className="input"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               required
               placeholder="Description"
-              className="add_item_input"
             />
           </label>
           <label htmlFor="finance_fee">
@@ -69,11 +69,11 @@ const AddItem = () => {
             <input
               type="number"
               name="finance_fee"
+              className="input"
               value={financeFee}
               onChange={(e) => setFinanceFee(e.target.value)}
               required
               placeholder="Finance Fee"
-              className="add_item_input"
             />
           </label>
           <label htmlFor="purchase_fee">
@@ -81,11 +81,11 @@ const AddItem = () => {
             <input
               type="number"
               name="purchase_fee"
+              className="input"
               value={purchaseFee}
               onChange={(e) => setPurchaseFee(e.target.value)}
               required
               placeholder="Purchase Fee"
-              className="add_item_input"
             />
           </label>
           <label htmlFor="total_amount">
@@ -93,11 +93,11 @@ const AddItem = () => {
             <input
               type="number"
               name="total_amount"
+              className="input"
               value={totalAmount}
               onChange={(e) => setTotalAmount(e.target.value)}
               required
               placeholder="Total Amount"
-              className="add_item_input"
               disabled
             />
           </label>
@@ -106,11 +106,11 @@ const AddItem = () => {
             <input
               type="number"
               name="duration"
+              className="input"
               value={duration}
               onChange={(e) => setDuration(e.target.value)}
               required
               placeholder="Duration"
-              className="add_item_input"
             />
           </label>
           <label htmlFor="apr">
@@ -118,10 +118,10 @@ const AddItem = () => {
             <input
               type="number"
               name="apr"
+              className="input"
               value={apr}
               onChange={(e) => setApr(e.target.value)}
               placeholder="APR"
-              className="add_item_input"
             />
           </label>
           <label htmlFor="snapshot">
@@ -129,9 +129,10 @@ const AddItem = () => {
             <input
               type="file"
               name="snapshot"
+              className="input"
               onChange={(e) => setSnapshot(e.target.files[0])}
               placeholder="Snapshot"
-              className="add_item_input"
+              
             />
           </label>
           <button type="submit" className="submit">
@@ -143,7 +144,7 @@ const AddItem = () => {
         )}
         <button
           type="submit"
-          className="btn_add_item"
+          className="submit"
           disabled={totalAmount < purchaseFee}
         >
           Add New Car
