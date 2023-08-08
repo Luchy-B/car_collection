@@ -3,7 +3,7 @@ class Api::V1::CarsController < ApplicationController
 
   # GET /cars
   def index
-    @cars = Car.all
+    @cars = Car.includes({snapshot_attachment: :blob})
 
     cars_with_snapshot_url = @cars.map do |car|
       car_data = car.attributes
