@@ -56,9 +56,11 @@ Car_Collection application is a website application that allows users to add car
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add Car_Item]**
+- **[Add Car Item]**
+- **[Show Car Item details]**
+- **[Delete Items]**
 - **[Make Reservation]**
-- **[Add Details]**
+- **[List reservations]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
