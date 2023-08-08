@@ -1,7 +1,9 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    # origins 'http://localhost:3001'  # Replace with your React frontend's URL
-    origins '*'
-    resource '*', headers: :any, methods: %i[get post put patch delete options head]
+        origins 'http://127.0.0.1:3000' # Adjust this to match your React app's URL
+        resource '*',
+          headers: :any,
+          methods: [:get, :post, :put, :patch, :delete, :options, :head],
+          credentials: true
   end
-end
+end 

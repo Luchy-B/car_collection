@@ -6,8 +6,9 @@
   padding: 3rem;
   gap: 2rem;
   flex-wrap: wrap;
-  overflow: scroll;
+  overflow-y: auto;
   background-color: #96bf01;
+  align-content: center;
 }
 
 .carItem {
@@ -27,6 +28,10 @@
   object-fit: cover;
   border-radius: 50%;
   background-color: #7d9c0b;
+}
+
+.carItem:hover {
+  transform: scale(1.03);
 }
 
 .carItem h2 {

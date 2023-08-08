@@ -6,7 +6,7 @@
 
 📗 Table of Contents
 
-- [📖 \[Car\_Collection\] ](#-car_collection-)
+- [📖 \[Car_Collection\] ](#-car_collection-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -17,7 +17,6 @@
   - [Database Setup](#database-setup)
     - [Usage](#usage)
     - [Deployment](#deployment)
-    - [Run tests](#run-tests)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -32,10 +31,11 @@
 Car_Collection application is a website application that allows users to add car brand, make reservation of any choice of car, delete car from collection of car and users can see a detail of any car.
 
 ## 🛠 Built With <a name="built-with"></a>
+
 <details>
   <summary>Client</summary>
   <ul>
-    <li><p> <b>Ruby on rRails: </b></p></li>
+    <li><p> <b>Ruby on Rails: </b></p></li>
     <li><p><b>React: </b></p></li>
   </ul>
 </details>
@@ -58,9 +58,11 @@ Car_Collection application is a website application that allows users to add car
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add Car_Item]**
+- **[Add Car Item]**
+- **[Show Car Item details]**
+- **[Delete Items]**
 - **[Make Reservation]**
-- **[Add Details]**
+- **[List reservations]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -94,6 +96,7 @@ Example command:
 
 ```sh
   bundle install
+  npm install
 ```
 ## Database Setup
 
@@ -106,17 +109,21 @@ Follow these steps to create, migrate, and seed your database:
 ### Usage
 
 To running the server:
+  npm run build
+  rails s
+
+To run the back end run this command in the terminal
 
 ```sh
- rails server
-
+  rails c
+  rails db:create
+  rails db:migrate
+  rails db:seed
 ```
 
 ### Deployment
 
 Coming soon
-
-### Run tests
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

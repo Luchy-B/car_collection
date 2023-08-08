@@ -37,9 +37,9 @@ const AddItem = () => {
 
   return (
     <div className="addItem_container">
-      <form onSubmit={handleSubmit}>
-        <h3 className="add-form-title">Add an Item</h3>
-        <div className="form-group">
+      <form onSubmit={handleSubmit} className="form">
+        <div className="forms form-add">
+          <h3>Add an Item</h3>
           <label htmlFor="name">
             Name:
             <input
@@ -134,6 +134,9 @@ const AddItem = () => {
               className="add_item_input"
             />
           </label>
+          <button type="submit" className="submit">
+            Add New Car
+          </button>
         </div>
         {totalAmount < purchaseFee && (
           <p>Total amount must be greater than or equal to purchase fee.</p>
