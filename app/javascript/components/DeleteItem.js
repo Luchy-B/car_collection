@@ -20,7 +20,7 @@ const DeleteItem = () => {
   return (
     <div className="carsContainer f">
       {cars.map((car) => (
-        <div className="carItem f r" key={car.id}>
+        <div className="carItem f r" key={`deletecar${car.id}`}>
           <img src={car.snapshot_url} alt="categoryIcon" />
           <h2>{car.name}</h2>
           <button type="button" onClick={() => handleDeleteCar(car.id)}>Delete Item</button>

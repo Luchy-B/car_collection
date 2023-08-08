@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { getCars } from '../redux/Cars/carsSlice';
+import { useParams } from 'react-router';
+import { getCars, getCar } from '../redux/Cars/carsSlice';
 import { createReservation } from '../redux/Reservations/reservationsSlice';
 import './style/reserveForm.css';
 
-const ReserveForm = ({ selectedItem }) => {
+const ReserveForm = () => {
   const dispatch = useDispatch();
   const userId = localStorage.getItem('current_user_id');
+  const { carId } = useParams();
+
   const initialFormState = {
     date: '',
     city: '',
     user_id: userId,
-    car_id: selectedItem ? +selectedItem.id : null,
+    car_id: carId || '',
   };
 
-  useEffect(() => {
-    dispatch(getCars());
-  }, [dispatch]);
+  const { car, cars } = useSelector((store) => store.cars);
 
-  const { cars } = useSelector((store) => store.cars);
+  useEffect(() => {
+    if (carId) {
+      dispatch(getCar(carId));
+    } else {
+      dispatch(getCars());
+    }
+  }, [dispatch, carId]);
+
   const [reserveData, setReserveData] = useState(initialFormState);
 
   const handleChange = (e) => {
@@ -72,11 +79,12 @@ const ReserveForm = ({ selectedItem }) => {
   return (
     <div className="reserveContainer f c">
       <div className="reserveFormHeader f c">
-        {selectedItem
+        {carId
           ? (
             <h2>
               BOOK A
-              {selectedItem.name}
+              {' '}
+              {car.name}
               {' '}
               TEST-RIDE
             </h2>
@@ -93,10 +101,9 @@ const ReserveForm = ({ selectedItem }) => {
         </p>
       </div>
       <form className="reserveForm f r" onSubmit={handleSubmit}>
-        <div className="reserveInputContainer f">
-          {!selectedItem
+        {!carId
           && (
-          <>
+          <div className="reserveInputContainer f">
             <label htmlFor="car_id">
               Car:
             </label>
@@ -110,14 +117,13 @@ const ReserveForm = ({ selectedItem }) => {
             >
               <option value="">Select a car</option>
               {cars.map((car) => (
-                <option key={car.id} value={car.id}>
+                <option key={`reservecar${car.id}`} value={car.id}>
                   {car.name}
                 </option>
               ))}
             </select>
-          </>
+          </div>
           )}
-        </div>
         <div className="reserveInputContainer f">
           <label htmlFor="city">
             City:
@@ -157,17 +163,6 @@ const ReserveForm = ({ selectedItem }) => {
       </form>
     </div>
   );
-};
-
-ReserveForm.propTypes = {
-  selectedItem: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-  }),
-};
-
-ReserveForm.defaultProps = {
-  selectedItem: null,
 };
 
 export default ReserveForm;

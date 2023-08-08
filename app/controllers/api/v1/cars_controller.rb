@@ -16,7 +16,10 @@ class Api::V1::CarsController < ApplicationController
 
   # GET /cars/1
   def show
-    render json: @car
+    @car = Car.find(params[:id])
+    car_data = @car.attributes
+    car_data[:snapshot_url] = url_for(@car.snapshot)
+    render json: car_data
   end
 
   # POST /cars

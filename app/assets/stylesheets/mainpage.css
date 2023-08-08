@@ -1,6 +1,8 @@
 .main-page {
   align-items: center;
+  justify-content: center;
   height: 100%;
+  width: 100%;
 }
 
 .main-container {
@@ -161,4 +163,11 @@
 
 .pagination-next {
   align-self: flex-start;
+}
+
+.main-page p {
+  align-self: center;
+  font-weight: bolder;
+  width: 70%;
+  text-align: center;
 }

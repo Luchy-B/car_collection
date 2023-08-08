@@ -9,14 +9,13 @@ import { logoutUser } from '../../redux/user/userSlice';
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ open, setOpen }) => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const navlist = [
     { name: 'ITEMS', to: '/' },
     { name: 'RESERVE FORM', to: 'RESERVE_FORM' },
     { name: 'MY RESERVATION', to: 'MY_RESERVATION' },
     { name: 'ADD ITEM', to: 'ADD_ITEM' },
-    { name: 'DETAILS', to: 'DETAILS' },
     { name: 'DELETE ITEM', to: 'DELETE_ITEM' },
   ];
 
@@ -36,7 +35,7 @@ const Navbar = ({ open, setOpen }) => {
 
   const handleLogout = () => {
     localStorage.removeItem('login');
-    localStorage.removeItem('current_user');
+    localStorage.removeItem('current_user_id');
     navigate('/');
     dispatch(logoutUser());
     window.location.reload();
@@ -53,7 +52,7 @@ const Navbar = ({ open, setOpen }) => {
               <NavLink
                 className="navlink"
                 to={item === 'ITEMS' ? '/' : item.to}
-                key={item}
+                key={item.name}
               >
                 {item.name}
               </NavLink>
