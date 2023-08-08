@@ -1,29 +1,42 @@
+<a name="readme-top"></a>
+
+<div align="center">
+ <h1>Collection of variety of Cars</h1>
+</div>
+
 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [📖 \[Car\_Collection\] ](#-car_collection-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Deployment](#deployment)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Hello_Rails_React_App] <a name="about-project"></a>
+# 📖 [Car_Collection] <a name="about-project"></a>
 
-**[Hello_Rails_React_App]** In this exercise I will have connect previous knowledge with new knowledge as you get a chance to use Webpack with jsbundling-rails gem.
+Car_Collection application is a website application that allows users to add car brand, make reservation of any choice of car, delete car from collection of car and users can see a detail of any car.
 
 ## 🛠 Built With <a name="built-with"></a>
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><p> <b>Ruby on rRails: </b></p></li>
+    <li><p><b>React: </b></p></li>
+  </ul>
+</details>
 
 ### Tech Stack <a name="tech-stack"></a>
 
@@ -43,9 +56,11 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add Remove functionality]**
-- **[Add Update functionality]**
-- **[Add more data base]**
+- **[Add Car Item]**
+- **[Show Car Item details]**
+- **[Delete Items]**
+- **[Make Reservation]**
+- **[List reservations]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -71,7 +86,7 @@ Example command:
 
 Clone this repository to your desired folder:
 
-Example commands:
+Example commands
 
 ```sh
   cd my-folder
@@ -86,8 +101,9 @@ Install this project with:
 Example command:
 
 ```sh
-  cd blog-app
+  cd  car_collection
   bundle install
+  npm install
 ```
 
 ### Usage
@@ -95,24 +111,13 @@ Example command:
 To run the project, execute the following command:
 
 ```sh
+  npm run build
   rails s
 ```
 
 ### Deployment
 
-This App has not been deployed
-
-### Run tests
-
-To run tests, run the following command:
-
-```sh
-  rspec spec
-```
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
+Coming soon
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,14 +131,31 @@ To run tests, run the following command:
 - Twitter: [@twitterhandle](https://twitter.com/MbaleKagheni)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/kagheni-mbale-401b90240/)
 
+👤 **Eduardo Villarreal**
+
+- GitHub: [@evillaz](https://github.com/evillaz)
+- Twitter: [@evillazz](https://twitter.com/evillazz)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/eduardo-villarreal-144a8925a)
+
+👤 **Okpara Blessing Oluchi**
+
+- GitHub: (https://github.com/Luchy-B)
+- LinkedIn: (https://www.linkedin.com/blessing-okpara/)
+
+👤 **Okpah Igbo**
+
+- GitHub: [@david30-maker](https://github.com/david30-maker)
+- Twitter: [@davidigbo1](https://twitter.com/davidigbo1)
+- LinkedIn: [davidigbo/](https://www.linkedin.com/in/davidigbo/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add schemas to the project]**
-- [ ] **[Add screenshot to provide details about the project]**
+- [ ] **[Add Cancel Reservation]**
+- [ ] **[Add other business logics]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -159,7 +181,7 @@ Give a start ⭐️ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Thank you Microverse and my friend who always explain me for preparing this project! clapclapclap
+Thank you Microverse and my coding partners
 
 [Creative Commons](https://creativecommons.org/licenses/by-nc/4.0/)
 
