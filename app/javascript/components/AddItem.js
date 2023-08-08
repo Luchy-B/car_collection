@@ -132,7 +132,7 @@ const AddItem = () => {
               className="input"
               onChange={(e) => setSnapshot(e.target.files[0])}
               placeholder="Snapshot"
-              
+
             />
           </label>
           <button type="submit" className="submit">
