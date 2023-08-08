@@ -20,16 +20,16 @@ const Details = () => {
       {car
       && (
       <>
-        <div className="detailsPage1">
-          <div className="detailsBack-container">
-            <RxTrackPrevious className="detailsBack" />
-          </div>
-          <div className="detailImg">
-            <img className="detailVehicle" src={car.snapshot_url} alt="categoryIcon" />
-          </div>
-        </div>
-
         <div className="detail-container">
+          <div className="detailsPage1">
+            <div className="detailsBack-container">
+              <RxTrackPrevious className="detailsBack" />
+            </div>
+            <div className="detailImg">
+              <img className="detailVehicle" src={car.snapshot_url} alt="categoryIcon" />
+            </div>
+          </div>
+
           <div className="details-content">
             <h3>{car.name}</h3>
 
@@ -67,9 +67,6 @@ const Details = () => {
               <TfiArrowCircleRight className="arrow-right-reserve" />
             </div>
           </div>
-          {/* <div className="detailsBack-container">
-            <RxTrackPrevious className="detailsBack" />
-          </div> */}
         </div>
       </>
       )}

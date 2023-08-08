@@ -19,7 +19,6 @@ class Api::V1::CarsController < ApplicationController
     @car = Car.find(params[:id])
     car_data = @car.attributes
     car_data[:snapshot_url] = url_for(@car.snapshot)
-    car_data
     render json: car_data
   end
 
