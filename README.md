@@ -6,7 +6,7 @@
 
 📗 Table of Contents
 
-- [📖 \[Car\_Collection\] ](#-car_collection-)
+- [📖 \[Car_Collection\] ](#-car_collection-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -30,10 +30,11 @@
 Car_Collection application is a website application that allows users to add car brand, make reservation of any choice of car, delete car from collection of car and users can see a detail of any car.
 
 ## 🛠 Built With <a name="built-with"></a>
+
 <details>
   <summary>Client</summary>
   <ul>
-    <li><p> <b>Ruby on rRails: </b></p></li>
+    <li><p> <b>Ruby on Rails: </b></p></li>
     <li><p><b>React: </b></p></li>
   </ul>
 </details>
@@ -113,6 +114,15 @@ To run the project, execute the following command:
 ```sh
   npm run build
   rails s
+```
+
+To run the back end run this command in the terminal
+
+```sh
+  rails c
+  rails db:create
+  rails db:migrate
+  rails db:seed
 ```
 
 ### Deployment
