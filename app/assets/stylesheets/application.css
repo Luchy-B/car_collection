@@ -374,3 +374,19 @@ html {
 .status {
   color: rgb(0, 161, 0);
 }
+
+/* RESERVATION */
+
+.table {
+  width: 80vw;
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .table {
+    flex-direction: column;
+  }
+}

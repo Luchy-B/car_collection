@@ -9,9 +9,7 @@ const Reservation = () => {
     dispatch(fetchReservations());
   }, [dispatch]);
 
-  const { reservations } = useSelector(
-    (store) => store.reservations,
-  );
+  const { reservations } = useSelector((store) => store.reservations);
 
   return (
     <div className="reserve_link_container">
@@ -19,14 +17,17 @@ const Reservation = () => {
       {reservations && reservations.length > 0 ? (
         <ul className="reservation_link_body">
           {reservations.map((reservation) => (
-            <li key={reservation.id}>
+            <li className="table" key={reservation.id}>
               <p className="reserve-link-name">
+                Car Name:
                 {reservation.car_name}
               </p>
               <p className="reserve-link-name">
+                Date:
                 {reservation.date}
               </p>
               <p className="reserve-link-name">
+                City:
                 {reservation.city}
               </p>
             </li>
