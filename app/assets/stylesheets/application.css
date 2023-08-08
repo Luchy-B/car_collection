@@ -121,30 +121,13 @@ html {
 }
 
 .detail-container {
-  /* width: calc(100% - 50rem);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-wrap: wrap;
-  user-select: none; */
   display: flex;
   flex-direction: row;
 }
 
 .detail-container img {
   width: 100%;
-
-  /* width: 100%;
-  position: relative;
-  top: 5rem;
-  left: -4rem; */
 }
-
-/* .details-image-container {
-  flex: 1 1 70%;
-} */
 
 .detailImg {
   width: 100%;
@@ -155,8 +138,6 @@ html {
 
 .detailVehicle {
   left: 0;
-
-  /* padding-top: 40px; */
   padding: 10px 10px 10px 10px;
   width: 100%;
   object-position: left;
@@ -167,13 +148,9 @@ html {
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   display: flex;
-
-  /* flex-direction: initial; */
   position: absolute;
   left: 0;
   padding: 15px 15px 15px 30px;
-
-  /* bottom: 0; */
   color: #d4d4d4;
   margin-top: 28rem;
 }
@@ -187,14 +164,10 @@ html {
   display: flex;
   flex-direction: column;
   padding: 7rem 2rem 7rem 2rem;
-
-  /* width: 100%; */
 }
 
 .details-content > h3 {
   text-align: end;
-
-  /* margin-top: 5rem; */
 }
 
 .details-description {
@@ -285,15 +258,8 @@ html {
 
   /* Details */
   .detail-container {
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
-  }
-
-  .detail-container img {
-    /* position: relative;
-    top: 0;
-    left: 0; */
   }
 
   .details-content {
@@ -343,7 +309,6 @@ html {
   }
 
   .detail-container {
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
   }

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router';
 import { getCars, getCar } from '../redux/Cars/carsSlice';
 import { createReservation } from '../redux/Reservations/reservationsSlice';
 import './style/reserveForm.css';
-import { useParams } from 'react-router';
 
 const ReserveForm = () => {
   const dispatch = useDispatch();
@@ -14,16 +14,15 @@ const ReserveForm = () => {
     date: '',
     city: '',
     user_id: userId,
-    car_id: carId ? carId : '',
+    car_id: carId || '',
   };
 
   const { car, cars } = useSelector((store) => store.cars);
 
   useEffect(() => {
-    if(carId) {
+    if (carId) {
       dispatch(getCar(carId));
-    }
-    else {
+    } else {
       dispatch(getCars());
     }
   }, [dispatch, carId]);
@@ -83,7 +82,11 @@ const ReserveForm = () => {
         {carId
           ? (
             <h2>
-              BOOK A {car.name} TEST-RIDE
+              BOOK A
+              {' '}
+              {car.name}
+              {' '}
+              TEST-RIDE
             </h2>
           ) : (
             <h2>
@@ -101,26 +104,26 @@ const ReserveForm = () => {
         {!carId
           && (
           <div className="reserveInputContainer f">
-              <label htmlFor="car_id">
-                Car:
-              </label>
-              <select
-                id="car_id"
-                name="car_id"
-                className={'reserveInput'}
-                value={reserveData.car_id}
-                onChange={handleChange}
-                required
-              >
-                <option value="">Select a car</option>
-                {cars.map((car) => (
-                  <option key={`reservecar${car.id}`} value={car.id}>
-                    {car.name}
-                  </option>
-                ))}
-              </select>
+            <label htmlFor="car_id">
+              Car:
+            </label>
+            <select
+              id="car_id"
+              name="car_id"
+              className="reserveInput"
+              value={reserveData.car_id}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select a car</option>
+              {cars.map((car) => (
+                <option key={`reservecar${car.id}`} value={car.id}>
+                  {car.name}
+                </option>
+              ))}
+            </select>
           </div>
-        )}
+          )}
         <div className="reserveInputContainer f">
           <label htmlFor="city">
             City:

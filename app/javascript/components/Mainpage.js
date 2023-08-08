@@ -133,10 +133,10 @@ export const Main = () => {
           </>
         ) : (
           <p>
-            It seems like we don't have any Cars into our Catalogue.
+            It seems like we don&apos;t have any Cars into our Catalogue.
             <br />
             {' '}
-            Try using "Add Item" on the menu!.
+            Try using &quot;Add Item&quot; on the menu!.
           </p>
         )}
     </div>
