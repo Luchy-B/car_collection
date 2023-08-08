@@ -55,7 +55,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails', '~> 3.5'
+ gem 'rspec-rails', '3.9.1'
 end
 
 group :development do
@@ -82,3 +82,10 @@ gem 'rack-cors', require: 'rack/cors'
 
 gem 'cancancan', '~> 3.5'
 gem 'devise', '~> 4.9'
+
+
+
+gem 'rspec-core', '3.9.3'
+gem 'rspec-expectations', '3.9.4'
+gem 'rspec-mocks', '3.9.1'
+gem 'rspec-support', '3.9.4'

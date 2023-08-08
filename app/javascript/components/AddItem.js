@@ -1,32 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addCar } from '../redux/Cars/carsSlice';
 
 const AddItem = () => {
   const dispatch = useDispatch();
 
-  const [name, setName] = useState(null);
-  const [description, setDescription] = useState(null);
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [financeFee, setFinanceFee] = useState(0);
   const [purchaseFee, setPurchaseFee] = useState(0);
-  const [totalAmount, setTotalAmount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(purchaseFee);
   const [duration, setDuration] = useState(1);
   const [apr, setApr] = useState(0);
   const [snapshot, setSnapshot] = useState(null);
 
+  useEffect(() => {
+    setTotalAmount(parseFloat(purchaseFee) + parseFloat(financeFee));
+  }, [purchaseFee, financeFee]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const carData = new FormData();
-    carData.append('car[name]', name);
-    carData.append('car[description]', description);
-    carData.append('car[finance_fee]', financeFee);
-    carData.append('car[purchase_fee]', purchaseFee);
-    carData.append('car[total_amount]', totalAmount);
-    carData.append('car[duration]', duration);
-    carData.append('car[apr]', apr);
-    carData.append('car[snapshot]', snapshot);
-    await dispatch(addCar(carData));
-    window.location.reload();
+    if (totalAmount >= purchaseFee) {
+      const carData = new FormData();
+      carData.append('car[name]', name);
+      carData.append('car[description]', description);
+      carData.append('car[finance_fee]', financeFee);
+      carData.append('car[purchase_fee]', purchaseFee);
+      carData.append('car[total_amount]', totalAmount);
+      carData.append('car[duration]', duration);
+      carData.append('car[apr]', apr);
+      carData.append('car[snapshot]', snapshot);
+      await dispatch(addCar(carData));
+      window.location.reload();
+    }
   };
 
   return (
@@ -79,12 +85,13 @@ const AddItem = () => {
               type="number"
               name="total_amount"
               className="input"
+              value={totalAmount === 0 ? 'Total Amount' : totalAmount}
               onChange={(e) => setTotalAmount(e.target.value)}
               required
               placeholder="Total Amount"
+              disabled
             />
           </label>
-
           <label htmlFor="duration">
             <input
               type="number"
@@ -92,10 +99,9 @@ const AddItem = () => {
               className="input"
               onChange={(e) => setDuration(e.target.value)}
               required
-              placeholder="duration"
+              placeholder="Duration"
             />
           </label>
-
           <label htmlFor="apr">
             <input
               type="number"
@@ -112,14 +118,20 @@ const AddItem = () => {
               className="input"
               onChange={(e) => setSnapshot(e.target.files[0])}
               placeholder="Snapshot"
+
             />
-            <br />
-            (PNG file only)
           </label>
-          <button type="submit" className="submit">
+          <button
+            type="submit"
+            className="submit"
+            disabled={totalAmount < purchaseFee}
+          >
             Add New Car
           </button>
         </div>
+        {totalAmount < purchaseFee && (
+          <p>Total amount must be greater than or equal to purchase fee.</p>
+        )}
       </form>
     </div>
   );

@@ -301,7 +301,11 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.6)
-  rspec-rails (~> 3.5)
+  rspec-core (= 3.9.3)
+  rspec-expectations (= 3.9.4)
+  rspec-mocks (= 3.9.1)
+  rspec-rails (= 3.9.1)
+  rspec-support (= 3.9.4)
   rswag
   rubocop (>= 1.0, < 2.0)
   selenium-webdriver
