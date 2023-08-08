@@ -13,10 +13,8 @@ export const fetchReservations = createAsyncThunk(
         throw new Error('Failed to fetch reservations');
       }
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (error) {
-      console.error('API Error:', error);
       return thunkAPI.rejectWithValue('Failed to fetch reservations');
     }
   },
@@ -87,23 +85,5 @@ const reservationsSlice = createSlice({
       }));
   },
 });
-
-// reducers: {},
-// extraReducers: (builder) => {
-//   builder
-//     .addCase(createReservation.pending, (state) => ({
-//       ...state,
-//       isLoading: true,
-//     }))
-//     .addCase(createReservation.fulfilled, (state) => ({
-//       ...state,
-//       isLoading: false,
-//     }))
-//     .addCase(createReservation.rejected, (state) => ({
-//       ...state,
-//       isLoading: false,
-//     }));
-// },
-// });
 
 export default reservationsSlice.reducer;
