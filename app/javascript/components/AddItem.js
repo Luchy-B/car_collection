@@ -120,9 +120,9 @@ const AddItem = () => {
               placeholder="Snapshot"
 
             /> 
-                <br>
-                (PNG file only)
           </label>
+                 <br>
+                (PNG file only)
           <button
             type="submit"
             className="submit"
