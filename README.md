@@ -114,19 +114,9 @@ To run the project, execute the following command:
 
 ### Deployment
 
-This App has not been deployed
+Coming soon
 
 ### Run tests
-
-To run tests, run the following command:
-
-```sh
-  rspec spec
-```
-
-```sh
-  bin/rails test test/models
-```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
