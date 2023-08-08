@@ -23,12 +23,9 @@ const App = () => {
     setLogin(localStorage.getItem('login'));
   }, [loggedIn]);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setOpen(!open);
-  };
-
-  const user = {
-    id: 1,
   };
 
   return (
@@ -42,13 +39,10 @@ const App = () => {
             </button>
             <Routes>
               <Route path="/" element={<Mainpage />} />
-              <Route
-                path="RESERVE_FORM"
-                element={<ReserveForm user={user} />}
-              />
+              <Route path="RESERVE_FORM/:carId?" element={<ReserveForm />} />
               <Route path="ADD_ITEM" element={<AddItem />} />
               <Route path="MY_RESERVATION" element={<Reservation />} />
-              <Route path="DETAILS" element={<Details />} />
+              <Route path="DETAILS/:id" element={<Details />} />
               <Route path="DELETE_ITEM" element={<DeleteItem />} />
             </Routes>
           </div>
