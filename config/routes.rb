@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
-  devise_for :users
+
+  resources :session, only: [:create]
+  resources :registrations, only: [:create]
+  delete :logout, to: 'session#logout'
+  get :logged_in, to: "session#logged_in"
   root 'root#index'
-  get '*path', to: 'root#index'
 
   namespace :api do
     namespace :v1 do
@@ -11,6 +14,9 @@ Rails.application.routes.draw do
       resources :reservations
     end
   end
+
+  get '/ITEMS','/RESERVE_FORM(/:path)', '/MY_RESERVATION', '/ADD_ITEM', '/DETAILS/*path', '/DELETE_ITEM', to: 'root#index'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

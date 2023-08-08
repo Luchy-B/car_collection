@@ -1,18 +1,25 @@
 class Api::V1::CarsController < ApplicationController
-  skip_before_action :verify_authenticity_token
   before_action :set_car, only: %i[show update destroy]
 
   # GET /cars
   def index
     @cars = Car.all
 
-    render json: @cars
+    cars_with_snapshot_url = @cars.map do |car|
+      car_data = car.attributes
+      car_data[:snapshot_url] = url_for(car.snapshot)
+      car_data
+    end
+
+    render json: cars_with_snapshot_url
   end
 
   # GET /cars/1
   def show
     @car = Car.find(params[:id])
-    render json: @car
+    car_data = @car.attributes
+    car_data[:snapshot_url] = url_for(@car.snapshot)
+    render json: car_data
   end
 
   # POST /cars
@@ -20,16 +27,7 @@ class Api::V1::CarsController < ApplicationController
     @car = Car.new(car_params)
 
     if @car.save
-      render json: @car, status: :created # , location: @car
-    else
-      render json: @car.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /cars/1
-  def update
-    if @car.update(car_params)
-      render json: @car
+      render json: @car, status: :created
     else
       render json: @car.errors, status: :unprocessable_entity
     end
@@ -37,7 +35,12 @@ class Api::V1::CarsController < ApplicationController
 
   # DELETE /cars/1
   def destroy
-    @car.destroy
+    @car.reservations.destroy_all
+    if @car.destroy
+      render json: { message: 'Car was deleted' }
+    else
+      render json: { message: 'There were some errors deleting the car' }, status: :unprocessable_entity
+    end
   end
 
   private

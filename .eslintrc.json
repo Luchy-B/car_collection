@@ -18,18 +18,15 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "no-alert": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-param-reassign": 0
   },
-  "overrides": [
-    {
-       // feel free to replace with your preferred file pattern - eg. 'src/**/*Slice.js' or 'redux/**/*Slice.js'
-      "files": ["src/**/*Slice.js"],
-      // avoid state param assignment
-      "rules": { "no-param-reassign": ["error", { "props": false }] }
-    }
-  ],
   "ignorePatterns": [
     "dist/",
-    "build/"
+    "build/",
+    "*.config.js",
+    "app/assets/**"
   ]
 }

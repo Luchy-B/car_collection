@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+html {
+  height: 100vh;
+  width: 100vw;
+  font-size: 16px;
+  margin: 0;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,10 +31,10 @@
     'Lucida Sans',
     Arial,
     sans-serif;
+  overflow: hidden;
 }
 
 .component {
-  background: red;
   width: 82vw;
   position: relative;
   height: 100vh;
@@ -46,8 +53,232 @@
   padding: 0.5rem;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100vw;
+  height: 100vh;
+  background:
+    linear-gradient(rgba(150, 191, 1, 0.2), rgb(124, 202, 6)),
+    url(BMW_X6.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main h1 {
+  color: white;
+}
+
+.main-division {
+  display: flex;
+  gap: 2rem;
+}
+
+.main-btn {
+  font-size: 1.5rem;
+  border: 1px solid lightgray;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  background: white;
+}
+
+.main-btn:hover {
+  cursor: pointer;
+  border: 0.1rem solid lightgray;
+  background: white;
+  color: rgb(124, 202, 6);
+}
+
 .close {
   display: none;
+  gap: 2rem;
+}
+
+.f {
+  display: flex;
+}
+
+.c {
+  flex-direction: column;
+}
+
+.r {
+  flex-direction: row;
+}
+
+/* Details */
+.detailsPage1 {
+  width: 70%;
+}
+
+.detail-container {
+  height: 100%;
+}
+
+.detail-container img {
+  width: 100%;
+}
+
+.detailImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.detailVehicle {
+  left: 0;
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  object-position: left;
+}
+
+.detailsBack-container {
+  background-color: #98bf11;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  left: 0;
+  padding: 15px 15px 15px 30px;
+  color: #d4d4d4;
+  width: max-content;
+  margin-bottom: 3rem;
+}
+
+.detailsBack {
+  color: #fff;
+}
+
+.details-content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.details-content > h3 {
+  text-align: end;
+}
+
+.details-description {
+  font-size: 0.6rem;
+  margin-left: auto;
+  padding-top: 5px;
+  text-align: end;
+}
+
+.car-details {
+  list-style-type: none;
+  padding-top: 20px;
+}
+
+.car-details li {
+  padding: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-reserve p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.car-details li p {
+  margin: 0;
+  padding: 0;
+}
+
+.car-details li:nth-child(odd) {
+  background-color: #d4d4d4;
+}
+
+.car-details li:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.car-detail {
+  font-weight: 500;
+}
+
+.car-reserve {
+  margin-top: 1rem;
+  border-radius: 3.6rem;
+  width: 10rem;
+  background-color: #98bf11;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.8rem;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.car-reserve:hover {
+  background-color: #98bf11;
+}
+
+.arrow-right-reserve {
+  font-size: 1.2rem;
+}
+
+.details-holder {
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
+.apr-detail {
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.apr-detail span {
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+
+  .main-btn {
+    width: 100px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+
+  /* Details */
+  .detail-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .details-content {
+    padding: 2rem 2rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -72,5 +303,90 @@
     top: 0.4rem;
     right: -2rem;
     position: absolute;
+    z-index: 2;
+  }
+
+  .detail-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .details-content {
+    width: 80%;
+  }
+
+  .details-holder {
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+}
+
+/* form register */
+
+.form-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.forms {
+  width: fit-content;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 0 auto;
+  background: whitesmoke;
+}
+
+.forms h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.forms a {
+  color: rgb(0, 51, 255);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input {
+  padding: 0.5rem;
+  width: 25rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 0.1rem solid lightgray;
+}
+
+.submit {
+  width: fit-content;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 0.1rem solid lightgray;
+}
+
+.status {
+  color: rgb(0, 161, 0);
+}
+
+/* RESERVATION */
+
+.table {
+  width: 80vw;
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .table {
+    flex-direction: column;
   }
 }

@@ -1,0 +1,173 @@
+.main-page {
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  width: 80%;
+  align-self: center;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.main-header {
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-header h2 {
+  font-weight: 900;
+}
+
+.main-header span {
+  color: #b9b9b9;
+  font-size: 0.6rem;
+  font-weight: bolder;
+}
+
+.main-header-underline {
+  width: 50%;
+  height: 1rem;
+  border-bottom: 4px dotted #f1f1f1;
+  margin: 1rem;
+}
+
+.vehicles-container {
+  width: 100%;
+  justify-content: center;
+  gap: 5rem;
+  overflow: visible;
+}
+
+.vehicle-holder {
+  width: 25%;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  overflow: visible;
+}
+
+.vehicle-circle {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.vehicle {
+  max-width: 100%;
+  top: 25%;
+  left: 0;
+  height: auto;
+  position: absolute;
+}
+
+.background-holder {
+  width: 70%;
+  height: 70%;
+  background-color: #a7bfd9;
+  border-radius: 50%;
+}
+
+.vehicle:hover {
+  transform: scale(1.03);
+}
+
+.main-description {
+  align-items: center;
+  gap: 1rem;
+}
+
+.vehicle-model {
+  text-align: center;
+  justify-self: center;
+  font-weight: 700;
+  width: max-content;
+  font-size: 1rem;
+  padding: 0 1rem 1rem;
+  border-bottom: 4px dotted #f1f1f1;
+}
+
+.vehicle-description {
+  font-size: 0.7rem;
+  line-height: 1rem;
+  color: rgb(177, 177, 177);
+  text-align: center;
+  justify-self: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.vehicle-icons {
+  height: max-content;
+  gap: 1rem;
+}
+
+.vehicle-icons a {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid rgb(218, 217, 217);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-icon {
+  font-size: 0.8rem;
+  color: #dad9d9;
+}
+
+.pagination {
+  width: 8%;
+  height: 4rem;
+  font-size: 1rem;
+  color: #fff;
+  justify-content: center;
+  border: none;
+  padding: 1rem;
+}
+
+.pagination.disabled {
+  background-color: #efefef;
+  border: 1px solid #efefef;
+}
+
+.pagination.active {
+  background-color: #98bf11;
+  border: 1px solid #98bf11;
+  cursor: pointer;
+}
+
+.prev {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.next {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.pagination-previous {
+  align-self: flex-end;
+}
+
+.pagination-next {
+  align-self: flex-start;
+}
+
+.main-page p {
+  align-self: center;
+  font-weight: bolder;
+  width: 70%;
+  text-align: center;
+}
