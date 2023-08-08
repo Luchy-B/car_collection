@@ -121,8 +121,6 @@ const AddItem = () => {
 
             /> 
           </label>
-                 <br>
-                (PNG file only)
           <button
             type="submit"
             className="submit"
