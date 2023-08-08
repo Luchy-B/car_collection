@@ -14,7 +14,7 @@ export const Main = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 1200) {
+      if (window.innerWidth >= 768) {
         setItemsPerPage(3);
       } else if (window.innerWidth > 480) {
         setItemsPerPage(2);

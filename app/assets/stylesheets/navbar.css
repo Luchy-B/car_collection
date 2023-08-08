@@ -1,14 +1,17 @@
 .navbar {
+  font-family: 'Archivo Black', sans-serif;
   background: rgb(243, 243, 243);
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
   padding: 1rem 0 1rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 18vw;
+  width: 11rem;
+  background-color: #fff;
+  border: 1px solid rgb(243, 243, 243);
+}
+
+.navbar * {
+  font-family: 'Archivo Black', sans-serif;
 }
 
 .navlinks-container {
@@ -16,6 +19,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.navlinks-container * {
+  font-size: 0.8rem;
 }
 
 .logo {
@@ -50,12 +57,11 @@ a {
 .social {
   display: flex;
   gap: 0.6rem;
-  justify-content: center;
   align-items: center;
 }
 
 .icon {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -63,6 +69,8 @@ a {
   .navbar {
     transform: translateX(-100%);
     transition: transform 0.3s ease-in;
+    position: fixed;
+    height: 100%;
   }
 
   .visible {
