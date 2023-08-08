@@ -16,7 +16,6 @@
     - [Install](#install)
     - [Usage](#usage)
     - [Deployment](#deployment)
-    - [Run tests](#run-tests)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -102,6 +101,7 @@ Example command:
 ```sh
   cd  car_collection
   bundle install
+  npm install
 ```
 
 ### Usage
@@ -109,14 +109,13 @@ Example command:
 To run the project, execute the following command:
 
 ```sh
+  npm run build
   rails s
 ```
 
 ### Deployment
 
 Coming soon
-
-### Run tests
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
