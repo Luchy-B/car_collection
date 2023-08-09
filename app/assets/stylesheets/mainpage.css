@@ -1,0 +1,184 @@
+.main-page {
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  width: 80%;
+  align-self: center;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 3rem;
+}
+
+.main-header {
+  align-items: center;
+}
+
+.main-header h2,
+.vehicle-model {
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.main-header span,
+.vehicle-description {
+  font-family: 'Kanit Medium', sans-serif;
+}
+
+.main-header h2 {
+  font-weight: 900;
+  font-size: 1.6rem;
+}
+
+.main-header span {
+  color: #c0c2c1;
+  font-size: 0.8rem;
+}
+
+.main-header-underline {
+  width: 40%;
+  height: 1rem;
+  border-bottom: 3px dotted #f1f1f1;
+  margin: 1rem;
+}
+
+.vehicles-container {
+  width: 100%;
+  justify-content: center;
+  gap: 3rem;
+  overflow: visible;
+}
+
+.vehicle-holder {
+  width: 30%;
+  height: 100%;
+  cursor: pointer;
+  align-items: center;
+  overflow: visible;
+  gap: 2rem;
+}
+
+.vehicle-circle {
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.vehicle-circle a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+}
+
+.vehicle {
+  max-width: 100%;
+  height: auto;
+}
+
+.background-holder {
+  width: 100%;
+  height: 100%;
+  background-color: #a7bfd9;
+  border-radius: 50%;
+}
+
+.vehicle:hover {
+  transform: scale(1.03);
+}
+
+.main-description {
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.vehicle-model {
+  text-align: center;
+  justify-self: center;
+  font-weight: 700;
+  width: max-content;
+  font-size: 0.8rem;
+  padding: 0 0.6rem 1rem;
+  border-bottom: 3px dotted #f1f1f1;
+}
+
+.vehicle-description {
+  font-size: 0.6rem;
+  line-height: 1rem;
+  color: #c0c2c1;
+  text-align: center;
+  align-self: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 13rem;
+  height: 2rem;
+}
+
+.vehicle-icons {
+  height: max-content;
+  gap: 1rem;
+}
+
+.vehicle-icons a {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid #f1f1f1;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-icon {
+  font-size: 0.6rem;
+  color: #ececec;
+}
+
+.pagination {
+  width: 4.5rem;
+  height: 3.5rem;
+  font-size: 1rem;
+  color: #fff;
+  justify-content: center;
+  border: none;
+  padding: 1rem;
+}
+
+.pagination.disabled {
+  background-color: #efefef;
+  border: 1px solid #efefef;
+}
+
+.pagination.active {
+  background-color: #98bf11;
+  border: 1px solid #98bf11;
+  cursor: pointer;
+}
+
+.prev {
+  border-top-right-radius: 45%;
+  border-bottom-right-radius: 45%;
+}
+
+.next {
+  border-top-left-radius: 45%;
+  border-bottom-left-radius: 45%;
+}
+
+.pagination-previous {
+  align-self: flex-end;
+}
+
+.pagination-next {
+  align-self: flex-start;
+}
