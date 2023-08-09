@@ -17,6 +17,7 @@
   - [Database Setup](#database-setup)
     - [Usage](#usage)
     - [Deployment](#deployment)
+  - [Kanban board](#kanban-board)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -127,6 +128,10 @@ Coming soon
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Kanban Board <a name="kanban-board"></a>
+- [Kanban Board](https://github.com/users/Kaghenimbale/projects/8)
+- [Kanban's Board initial state](https://github.com/Kaghenimbale/car_collection/issues/12)
+- Team members: 4
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
