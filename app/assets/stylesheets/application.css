@@ -47,6 +47,7 @@ html {
 .component {
   width: 90%;
   height: 100vh;
+  overflow-y: auto;
 }
 
 .btn {
@@ -336,6 +337,7 @@ html {
   align-items: center;
   justify-content: center;
   background: white;
+  width: 100%;
 }
 
 .forms {
